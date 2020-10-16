@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0c75d0f8c39c64463bd75fc47521f819",
+    "revision": "ad6388c9d818db625f00dd22a33510cc",
     "url": "/dansl-jardin-ordering/index.html"
   },
   {
-    "revision": "4732b1c69d8555f5bf94",
-    "url": "/dansl-jardin-ordering/static/css/main.7aec1b14.chunk.css"
+    "revision": "2525d442ca4af10d1c76",
+    "url": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css"
   },
   {
-    "revision": "8b887060a350b2142a21",
-    "url": "/dansl-jardin-ordering/static/js/2.182fa745.chunk.js"
+    "revision": "f1963b6198e54620225f",
+    "url": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/dansl-jardin-ordering/static/js/2.182fa745.chunk.js.LICENSE.txt"
+    "url": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4732b1c69d8555f5bf94",
-    "url": "/dansl-jardin-ordering/static/js/main.ee36bc8b.chunk.js"
+    "revision": "2525d442ca4af10d1c76",
+    "url": "/dansl-jardin-ordering/static/js/main.a6dcb47e.chunk.js"
   },
   {
     "revision": "5af2a70621fd6fe4ec12",
@@ -36,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dansl-jardin-ordering/static/media/02-picto-artiste.ea26b3a4.png"
   },
   {
+    "revision": "b9b0651d92a192e43f9e7624e93ebd74",
+    "url": "/dansl-jardin-ordering/static/media/Fenotype - CamperSans2.b9b0651d.otf"
+  },
+  {
     "revision": "c4f930420a8b59744fab0ec6e5537d4a",
     "url": "/dansl-jardin-ordering/static/media/GRANDMERE2.c4f93042.png"
   },
@@ -50,6 +54,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "080fde2842ff4a22a9463880b0ee50b2",
     "url": "/dansl-jardin-ordering/static/media/NeutraTextLight.080fde28.otf"
+  },
+  {
+    "revision": "a0f77bd90a3be86c34c45e30b2589556",
+    "url": "/dansl-jardin-ordering/static/media/Tour_z.a0f77bd9.png"
   },
   {
     "revision": "e02331773c9f5d9c1582303965079775",

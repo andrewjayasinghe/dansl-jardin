@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/dansl-jardin-ordering/static/css/main.7aec1b14.chunk.css",
-    "main.js": "/dansl-jardin-ordering/static/js/main.ee36bc8b.chunk.js",
-    "main.js.map": "/dansl-jardin-ordering/static/js/main.ee36bc8b.chunk.js.map",
+    "main.css": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css",
+    "main.js": "/dansl-jardin-ordering/static/js/main.a6dcb47e.chunk.js",
+    "main.js.map": "/dansl-jardin-ordering/static/js/main.a6dcb47e.chunk.js.map",
     "runtime-main.js": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js",
     "runtime-main.js.map": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js.map",
-    "static/js/2.182fa745.chunk.js": "/dansl-jardin-ordering/static/js/2.182fa745.chunk.js",
-    "static/js/2.182fa745.chunk.js.map": "/dansl-jardin-ordering/static/js/2.182fa745.chunk.js.map",
+    "static/js/2.6eb4d226.chunk.js": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js",
+    "static/js/2.6eb4d226.chunk.js.map": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js.map",
     "index.html": "/dansl-jardin-ordering/index.html",
-    "precache-manifest.4337b9904002f709e3727c80c9ed7478.js": "/dansl-jardin-ordering/precache-manifest.4337b9904002f709e3727c80c9ed7478.js",
+    "precache-manifest.0aca61f63690503616c3b9b95922ccb6.js": "/dansl-jardin-ordering/precache-manifest.0aca61f63690503616c3b9b95922ccb6.js",
     "service-worker.js": "/dansl-jardin-ordering/service-worker.js",
-    "static/css/main.7aec1b14.chunk.css.map": "/dansl-jardin-ordering/static/css/main.7aec1b14.chunk.css.map",
-    "static/js/2.182fa745.chunk.js.LICENSE.txt": "/dansl-jardin-ordering/static/js/2.182fa745.chunk.js.LICENSE.txt",
+    "static/css/main.22ba23e2.chunk.css.map": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css.map",
+    "static/js/2.6eb4d226.chunk.js.LICENSE.txt": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js.LICENSE.txt",
     "static/media/01_Logo-principal.png": "/dansl-jardin-ordering/static/media/01_Logo-principal.86f002f3.png",
     "static/media/01_logo-horizontal - Copy.png": "/dansl-jardin-ordering/static/media/01_logo-horizontal - Copy.86da952f.png",
     "static/media/02-picto-artiste.png": "/dansl-jardin-ordering/static/media/02-picto-artiste.ea26b3a4.png",
+    "static/media/Home.css": "/dansl-jardin-ordering/static/media/Fenotype - CamperSans2.b9b0651d.otf",
     "static/media/GRANDMERE2.png": "/dansl-jardin-ordering/static/media/GRANDMERE2.c4f93042.png",
     "static/media/Ordering.css": "/dansl-jardin-ordering/static/media/NeutraTextLight.080fde28.otf",
+    "static/media/Tour_z.png": "/dansl-jardin-ordering/static/media/Tour_z.a0f77bd9.png",
     "static/media/accordeonisteblanc.png": "/dansl-jardin-ordering/static/media/accordeonisteblanc.e0233177.png",
     "static/media/duomusiciens.png": "/dansl-jardin-ordering/static/media/duomusiciens.d3e44020.png",
     "static/media/institutionnew - Copy.png": "/dansl-jardin-ordering/static/media/institutionnew - Copy.aef74f3a.png",
@@ -27,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.444447f6.js",
-    "static/js/2.182fa745.chunk.js",
-    "static/css/main.7aec1b14.chunk.css",
-    "static/js/main.ee36bc8b.chunk.js"
+    "static/js/2.6eb4d226.chunk.js",
+    "static/css/main.22ba23e2.chunk.css",
+    "static/js/main.a6dcb47e.chunk.js"
   ]
 }
