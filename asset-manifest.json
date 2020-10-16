@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css",
-    "main.js": "/dansl-jardin-ordering/static/js/main.a6dcb47e.chunk.js",
-    "main.js.map": "/dansl-jardin-ordering/static/js/main.a6dcb47e.chunk.js.map",
+    "main.js": "/dansl-jardin-ordering/static/js/main.9e4b4633.chunk.js",
+    "main.js.map": "/dansl-jardin-ordering/static/js/main.9e4b4633.chunk.js.map",
     "runtime-main.js": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js",
     "runtime-main.js.map": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js.map",
-    "static/js/2.6eb4d226.chunk.js": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js",
-    "static/js/2.6eb4d226.chunk.js.map": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js.map",
+    "static/js/2.6e85ede9.chunk.js": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js",
+    "static/js/2.6e85ede9.chunk.js.map": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js.map",
     "index.html": "/dansl-jardin-ordering/index.html",
-    "precache-manifest.0aca61f63690503616c3b9b95922ccb6.js": "/dansl-jardin-ordering/precache-manifest.0aca61f63690503616c3b9b95922ccb6.js",
+    "precache-manifest.847fda3814c82d6ff8b3c9bffa1f8acb.js": "/dansl-jardin-ordering/precache-manifest.847fda3814c82d6ff8b3c9bffa1f8acb.js",
     "service-worker.js": "/dansl-jardin-ordering/service-worker.js",
     "static/css/main.22ba23e2.chunk.css.map": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css.map",
-    "static/js/2.6eb4d226.chunk.js.LICENSE.txt": "/dansl-jardin-ordering/static/js/2.6eb4d226.chunk.js.LICENSE.txt",
+    "static/js/2.6e85ede9.chunk.js.LICENSE.txt": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js.LICENSE.txt",
     "static/media/01_Logo-principal.png": "/dansl-jardin-ordering/static/media/01_Logo-principal.86f002f3.png",
     "static/media/01_logo-horizontal - Copy.png": "/dansl-jardin-ordering/static/media/01_logo-horizontal - Copy.86da952f.png",
     "static/media/02-picto-artiste.png": "/dansl-jardin-ordering/static/media/02-picto-artiste.ea26b3a4.png",
@@ -29,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.444447f6.js",
-    "static/js/2.6eb4d226.chunk.js",
+    "static/js/2.6e85ede9.chunk.js",
     "static/css/main.22ba23e2.chunk.css",
-    "static/js/main.a6dcb47e.chunk.js"
+    "static/js/main.9e4b4633.chunk.js"
   ]
 }
