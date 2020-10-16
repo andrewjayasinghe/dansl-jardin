@@ -23,7 +23,7 @@ function App() {
         <Route path={process.env.PUBLIC_URL + '/#/order1'}>
           <Ordering_1 />
         </Route>
-        <Route path={process.env.PUBLIC_URL + 'order2'}>
+        <Route path={process.env.PUBLIC_URL + '/order2'}>
           <Ordering_2 />
         </Route>
         <Route path="/order3">
