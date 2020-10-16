@@ -26,7 +26,7 @@ class Navbar extends Component {
       <a href="/" className="nav-font">HOME</a>
       <a href="/faq" className="nav-font">FAQ</a>
       <a href="/info" className="nav-font">INFO</a>
-      <a href="/dansl-jardin-ordering/order1" className="nav-font">ORDER</a>
+      <a href="/order1" className="nav-font">ORDER</a>
       </div>
 
     </ReactBootStrap.Nav>
