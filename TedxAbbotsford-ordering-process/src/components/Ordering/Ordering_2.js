@@ -28,7 +28,7 @@ class Ordering_2 extends Component {
             </ReactBootStrap.Row>
             <ReactBootStrap.Row>
             <ReactBootStrap.Col style={{marginLeft:'20px', marginTop:'20px'}}>
-            <ReactBootStrap.Button variant="danger" className='button'><a href="/order3">Submit</a></ReactBootStrap.Button>
+            <ReactBootStrap.Button variant="danger" className='button'><a href={process.env.PUBLIC_URL + '/#/about3'}>Submit</a></ReactBootStrap.Button>
             </ReactBootStrap.Col>
             </ReactBootStrap.Row>
 

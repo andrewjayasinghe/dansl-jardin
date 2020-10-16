@@ -18,10 +18,10 @@ class Ordering_4 extends Component {
             </ReactBootStrap.Row>
             <ReactBootStrap.Row sm={1} md={3}>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="/order5"><img src={pic1} className="pic2"/><p>Soloist</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/about5'}><img src={pic1} className="pic2"/><p>Soloist</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="/order5"><img src={pic2} className="pic2"/><p>Duo</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/about5'}><img src={pic2} className="pic2"/><p>Duo</p></a></ReactBootStrap.Col>
                     </div>
             </ReactBootStrap.Row>
                 </div>

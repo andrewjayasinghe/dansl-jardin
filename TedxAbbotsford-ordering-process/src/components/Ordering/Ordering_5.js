@@ -13,12 +13,12 @@ class Ordering_5 extends Component {
             </ReactBootStrap.Row>
             <ReactBootStrap.Row sm={1} md={6}>
                     <div className="bg-display-button">
-                    <ReactBootStrap.Col><a href="/order6"><p>Yes</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/about6'}><p>Yes</p></a></ReactBootStrap.Col>
                     </div>
             </ReactBootStrap.Row>
             <ReactBootStrap.Row sm={1} md={6}>
                     <div className="bg-display-button" style={{marginTop:'8px'}}>
-                    <ReactBootStrap.Col><a href="/order6">No</a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/about6'}>No</a></ReactBootStrap.Col>
                     </div>
             </ReactBootStrap.Row>
                 </div>
