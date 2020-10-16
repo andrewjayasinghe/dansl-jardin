@@ -92,7 +92,7 @@ export default class Ordering_6 extends Component {
     <h6><i>Leave us a little comment that will help us better target the event and the artist.</i></h6>
     <Form.Control as="textarea" rows={3} placeholder="Anything you'd like us to know" />
   </Form.Group>
-  <ReactBootStrap.Button variant="danger" className='button'><a href={process.env.PUBLIC_URL + '/#/home'}>Submit</a></ReactBootStrap.Button>
+  <ReactBootStrap.Button variant="danger" className='button'><a href={process.env.PUBLIC_URL + '/#/'}>Submit</a></ReactBootStrap.Button>
 </Form>  
 </div>
 </Container>
