@@ -24,7 +24,7 @@ class Home extends Component {
                             </ReactBootStrap.Row>
                             <ReactBootStrap.Row>
                                 <div class="buttonAlign">
-                                <a href="/order">
+                                <a href={process.env.PUBLIC_URL + '/#/order'}>
                                     <input type="button" value="Order Now" class="orderButton"></input>
                                 </a>
                                 </div>
