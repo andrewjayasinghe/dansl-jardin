@@ -13,7 +13,7 @@ import Ordering_6 from "./components/Ordering/Ordering_6";
 import Home from "./components/Home/Home";
 
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 function App() {
