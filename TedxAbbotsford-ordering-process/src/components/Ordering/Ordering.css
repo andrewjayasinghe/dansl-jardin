@@ -63,6 +63,10 @@
     background-color: rgba(255, 255, 255, 0.39);
 }
 
+.bg-display-button:hover {
+  background-color: rgba(255, 255, 255, 0.39);
+}
+
 
 .added-mar {
     margin-top: -50px;
