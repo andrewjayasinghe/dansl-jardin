@@ -25,7 +25,7 @@ class Navbar extends Component {
       <div className="nav-size">
       <a href="/" className="nav-font">HOME</a>
       <a href="/faq" className="nav-font">FAQ</a>
-      <a href="/info" className="nav-font">INFO</a>
+      <a href={process.env.PUBLIC_URL + '/order1'} className="nav-font">INFO</a>
       <a href={process.env.PUBLIC_URL + '/#/order1'} className="nav-font">ORDER</a>
       </div>
 
