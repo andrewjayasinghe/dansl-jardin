@@ -19,8 +19,8 @@ class Ordering_5 extends Component {
             </ReactBootStrap.Row>
             <ReactBootStrap.Row sm={1} md={6}>
             <a href={process.env.PUBLIC_URL + '/#/order6'}>
-                    <div className="bg-display-button" style={{marginTop:'8px'}}>
-                    <ReactBootStrap.Col>No</ReactBootStrap.Col>
+                    <div style={{marginTop:'8px', paddingRight:"5px"}} className="bg-display-button">
+                    <ReactBootStrap.Col><p>No</p></ReactBootStrap.Col>
                     </div>
                     </a>
             </ReactBootStrap.Row>
