@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dansl-jardin-ordering/precache-manifest.e085a3e6eb314b1f6aefe60a655ab2ae.js"
+  "/dansl-jardin-ordering/precache-manifest.84a0836129f8e6682992d60b40907032.js"
 );
 
 self.addEventListener('message', (event) => {
