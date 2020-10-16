@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/dansl-jardin-ordering/static/css/main.7aec1b14.chunk.css",
+    "main.js": "/dansl-jardin-ordering/static/js/main.995d9e7c.chunk.js",
+    "main.js.map": "/dansl-jardin-ordering/static/js/main.995d9e7c.chunk.js.map",
+    "runtime-main.js": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js",
+    "runtime-main.js.map": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js.map",
+    "static/js/2.9b6bec40.chunk.js": "/dansl-jardin-ordering/static/js/2.9b6bec40.chunk.js",
+    "static/js/2.9b6bec40.chunk.js.map": "/dansl-jardin-ordering/static/js/2.9b6bec40.chunk.js.map",
+    "index.html": "/dansl-jardin-ordering/index.html",
+    "precache-manifest.f65b1ba7cf73898288d3625bce0d2cbd.js": "/dansl-jardin-ordering/precache-manifest.f65b1ba7cf73898288d3625bce0d2cbd.js",
+    "service-worker.js": "/dansl-jardin-ordering/service-worker.js",
+    "static/css/main.7aec1b14.chunk.css.map": "/dansl-jardin-ordering/static/css/main.7aec1b14.chunk.css.map",
+    "static/js/2.9b6bec40.chunk.js.LICENSE.txt": "/dansl-jardin-ordering/static/js/2.9b6bec40.chunk.js.LICENSE.txt",
+    "static/media/01_Logo-principal.png": "/dansl-jardin-ordering/static/media/01_Logo-principal.86f002f3.png",
+    "static/media/01_logo-horizontal - Copy.png": "/dansl-jardin-ordering/static/media/01_logo-horizontal - Copy.86da952f.png",
+    "static/media/02-picto-artiste.png": "/dansl-jardin-ordering/static/media/02-picto-artiste.ea26b3a4.png",
+    "static/media/GRANDMERE2.png": "/dansl-jardin-ordering/static/media/GRANDMERE2.c4f93042.png",
+    "static/media/Ordering.css": "/dansl-jardin-ordering/static/media/NeutraTextLight.080fde28.otf",
+    "static/media/accordeonisteblanc.png": "/dansl-jardin-ordering/static/media/accordeonisteblanc.e0233177.png",
+    "static/media/duomusiciens.png": "/dansl-jardin-ordering/static/media/duomusiciens.d3e44020.png",
+    "static/media/institutionnew - Copy.png": "/dansl-jardin-ordering/static/media/institutionnew - Copy.aef74f3a.png",
+    "static/media/musiciennesolo.png": "/dansl-jardin-ordering/static/media/musiciennesolo.fee6b191.png",
+    "static/media/saxoblanc.png": "/dansl-jardin-ordering/static/media/saxoblanc.70c0a9cd.png",
+    "static/media/tresorblanc.png": "/dansl-jardin-ordering/static/media/tresorblanc.730f9fa6.png",
+    "static/media/violonsiteblanc.png": "/dansl-jardin-ordering/static/media/violonsiteblanc.a18ac9dc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.444447f6.js",
+    "static/js/2.9b6bec40.chunk.js",
+    "static/css/main.7aec1b14.chunk.css",
+    "static/js/main.995d9e7c.chunk.js"
+  ]
+}
