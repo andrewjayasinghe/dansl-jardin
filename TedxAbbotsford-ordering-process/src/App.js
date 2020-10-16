@@ -20,22 +20,22 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/order1">
+        <Route path="/dansl-jardin-ordering/order1">
           <Ordering_1 />
         </Route>
-        <Route path="/order2">
+        <Route path="/dansl-jardin-ordering/order2">
           <Ordering_2 />
         </Route>
-        <Route path="/order3">
+        <Route path="/dansl-jardin-ordering/order3">
           <Ordering_3 />
         </Route>
-        <Route path="/order4">
+        <Route path="/dansl-jardin-ordering/order4">
           <Ordering_4 />
         </Route>
-        <Route path="/order5">
+        <Route path="/dansl-jardin-ordering/order5">
           <Ordering_5 />
         </Route>
-        <Route path="/order6">
+        <Route path="/dansl-jardin-ordering/order6">
           <Ordering_6 />
           </Route>
       </Switch>
