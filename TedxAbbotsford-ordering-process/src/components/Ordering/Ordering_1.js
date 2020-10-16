@@ -22,10 +22,10 @@ class Ordering_1 extends Component {
             </ReactBootStrap.Row>
             <ReactBootStrap.Row>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="/dansl-jardin-ordering/order2"><img src={pic1} className="pic"/><p>One Person In Particular</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href="/order2"><img src={pic1} className="pic"/><p>One Person In Particular</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="/dansl-jardin-ordering/order2"><img src={pic2} className="pic"/><p>A Small Committee</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href="/order2"><img src={pic2} className="pic"/><p>A Small Committee</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
                     <ReactBootStrap.Col><a href="#asd"><img src={pic3} className="pic"/><p>An <br/>Institution</p></a></ReactBootStrap.Col>
