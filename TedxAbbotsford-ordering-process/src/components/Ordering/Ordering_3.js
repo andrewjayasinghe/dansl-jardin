@@ -29,10 +29,10 @@ class Ordering_3 extends Component {
                     <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/order4'}><img src={pic2} className="pic"/><p style={{fontSize:'19px'}}>Popular Music</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="#asd"><img src={pic3} className="pic"/><p>Jazzy - Pop</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/order4'}><img src={pic3} className="pic"/><p>Jazzy - Pop</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="#asd"><img src={pic4} className="pic"/><p>Suprise!</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/order4'}><img src={pic4} className="pic"/><p>Suprise!</p></a></ReactBootStrap.Col>
                     </div>
             </ReactBootStrap.Row>
                 </div>

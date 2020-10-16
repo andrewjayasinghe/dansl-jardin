@@ -28,10 +28,10 @@ class Ordering_1 extends Component {
                     <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/order2'}><img src={pic2} className="pic"/><p>A Small Committee</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="#asd"><img src={pic3} className="pic"/><p>An <br/>Institution</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/order2'}><img src={pic3} className="pic"/><p>An <br/>Institution</p></a></ReactBootStrap.Col>
                     </div>
                     <div className="bg-display-test">
-                    <ReactBootStrap.Col><a href="#asd"><img src={pic4} className="pic"/><p>Donate To The Platform</p></a></ReactBootStrap.Col>
+                    <ReactBootStrap.Col><a href={process.env.PUBLIC_URL + '/#/order2'}><img src={pic4} className="pic"/><p>Donate To The Platform</p></a></ReactBootStrap.Col>
                     </div>
             </ReactBootStrap.Row>
                 </div>
