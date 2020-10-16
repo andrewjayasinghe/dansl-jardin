@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css",
-    "main.js": "/dansl-jardin-ordering/static/js/main.ba95721a.chunk.js",
-    "main.js.map": "/dansl-jardin-ordering/static/js/main.ba95721a.chunk.js.map",
+    "main.js": "/dansl-jardin-ordering/static/js/main.058b1452.chunk.js",
+    "main.js.map": "/dansl-jardin-ordering/static/js/main.058b1452.chunk.js.map",
     "runtime-main.js": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js",
     "runtime-main.js.map": "/dansl-jardin-ordering/static/js/runtime-main.444447f6.js.map",
     "static/js/2.6e85ede9.chunk.js": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js",
     "static/js/2.6e85ede9.chunk.js.map": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js.map",
     "index.html": "/dansl-jardin-ordering/index.html",
-    "precache-manifest.1272dcfb190b852a86699265baa269ae.js": "/dansl-jardin-ordering/precache-manifest.1272dcfb190b852a86699265baa269ae.js",
+    "precache-manifest.474c1892351c51c8bcbd05041e85107e.js": "/dansl-jardin-ordering/precache-manifest.474c1892351c51c8bcbd05041e85107e.js",
     "service-worker.js": "/dansl-jardin-ordering/service-worker.js",
     "static/css/main.22ba23e2.chunk.css.map": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css.map",
     "static/js/2.6e85ede9.chunk.js.LICENSE.txt": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js.LICENSE.txt",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.444447f6.js",
     "static/js/2.6e85ede9.chunk.js",
     "static/css/main.22ba23e2.chunk.css",
-    "static/js/main.ba95721a.chunk.js"
+    "static/js/main.058b1452.chunk.js"
   ]
 }

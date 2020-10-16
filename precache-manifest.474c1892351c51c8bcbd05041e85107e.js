@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2d2934730a0d276ba18c2c093935898d",
+    "revision": "a9fdadf32f4d1a0bb43b8320d520ad20",
     "url": "/dansl-jardin-ordering/index.html"
   },
   {
-    "revision": "23766ecc77a4838f9dd9",
+    "revision": "4fd760cfc670ed9f07a0",
     "url": "/dansl-jardin-ordering/static/css/main.22ba23e2.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dansl-jardin-ordering/static/js/2.6e85ede9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "23766ecc77a4838f9dd9",
-    "url": "/dansl-jardin-ordering/static/js/main.ba95721a.chunk.js"
+    "revision": "4fd760cfc670ed9f07a0",
+    "url": "/dansl-jardin-ordering/static/js/main.058b1452.chunk.js"
   },
   {
     "revision": "5af2a70621fd6fe4ec12",
