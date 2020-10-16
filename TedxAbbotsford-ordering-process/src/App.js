@@ -20,10 +20,10 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/#/order1">
+        <Route path="/dansl-jardin-ordering/#/order1">
           <Ordering_1 />
         </Route>
-        <Route path="/#/order2">
+        <Route path="/dansl-jardin-ordering/#/order2">
           <Ordering_2 />
         </Route>
         <Route path="/order3">
