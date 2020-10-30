@@ -11,14 +11,14 @@ import sixthPicture from "./../../assets/logos/03-picto-don.png"
 import seventhPicture from "./../../assets/logos/cadeauici.webp"
 
 import video from "./../../assets/video/homepage-video.mp4"
-import firstPhoto from "./../../assets/photos/firstPhoto.jpg"
-import secondPhoto from "./../../assets/photos/secondPhoto.jpg"
-import thirdPhoto from "./../../assets/photos/thirdPhoto.jpg"
-import fourthPhoto from "./../../assets/photos/fourthPhoto.jpg"
-import fifthPhoto from "./../../assets/photos/fifthPhoto.jpg"
-import sixthPhoto from "./../../assets/photos/sixthPhoto.jpg"
-import seventhPhoto from "./../../assets/photos/seventhPhoto.jpg"
-import eighthPhoto from "./../../assets/photos/eighthPhoto.jpg"
+// import firstPhoto from "./../../assets/photos/firstPhoto.jpg"
+// import secondPhoto from "./../../assets/photos/secondPhoto.jpg"
+// import thirdPhoto from "./../../assets/photos/thirdPhoto.jpg"
+// import fourthPhoto from "./../../assets/photos/fourthPhoto.jpg"
+// import fifthPhoto from "./../../assets/photos/fifthPhoto.jpg"
+// import sixthPhoto from "./../../assets/photos/sixthPhoto.jpg"
+// import seventhPhoto from "./../../assets/photos/seventhPhoto.jpg"
+// import eighthPhoto from "./../../assets/photos/eighthPhoto.jpg"
 
 import facebookLogo from "./../../assets/logos/facebookLogo.png"
 import instagramLogo from "./../../assets/logos/instagramLogo.png"
@@ -194,7 +194,7 @@ class Home extends Component {
                 <h1 class="textAlign2">SOME MEMORIES OF UNFORGETTABLE MOMENTS</h1>
                     
                
-                <ReactBootStrap.Carousel className="buttonAlign2" autoPlay={true} animation={false} slideshowSpeed={100}>
+                {/* <ReactBootStrap.Carousel className="buttonAlign2" autoPlay={true} animation={false} slideshowSpeed={100}>
                     <ReactBootStrap.Carousel.Item className="buttonAlign2">
                         <img className="carouselImage" src={firstPhoto}/>
                     </ReactBootStrap.Carousel.Item>
@@ -216,7 +216,7 @@ class Home extends Component {
                     <ReactBootStrap.Carousel.Item className="buttonAlign2">
                         <img className="carouselImage" src={eighthPhoto}/>
                     </ReactBootStrap.Carousel.Item>
-                </ReactBootStrap.Carousel>
+                </ReactBootStrap.Carousel> */}
 
                 <br></br>
                 <br></br>
