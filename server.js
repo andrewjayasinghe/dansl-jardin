@@ -10,10 +10,10 @@ const saltRounds = 10;
 const port = 5000;
 
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "Anantharajah123!",
-  database: "musician",
+  host: "	s0znzigqvfehvff5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  user: "dkic02evz5mfh6al",
+  password: "dmiaufvbuyrhks8n",
+  database: "q2csyqyb5omkuoqp",
 });
 
 app.use(cors());
