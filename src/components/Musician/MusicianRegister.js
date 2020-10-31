@@ -16,8 +16,8 @@ function MusicianRegister() {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -203,7 +203,7 @@ function MusicianRegister() {
                   />
                 </ReactBootStrap.Form.Group>
 
-                <ReactBootStrap.Form.Group controlId="formGridlname">
+                <ReactBootStrap.Form.Group>
                   <ReactBootStrap.Form.Label id="font">
                     Musical Training(s)
                   </ReactBootStrap.Form.Label>
@@ -217,12 +217,10 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="defaultGroupExample1"
                         name="groupOfDefaultRadios"
-                        onClick={
-                          (HideTextArea,
-                          (e) => {
-                            setTraining("master");
-                          })
-                        }
+                        onClick={(e) => {
+                          setTraining("master");
+                          HideTextArea();
+                        }}
                       />
                       <label
                         class="custom-control-label"
@@ -238,12 +236,10 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="defaultGroupExample2"
                         name="groupOfDefaultRadios"
-                        onClick={
-                          (HideTextArea,
-                          (e) => {
-                            setTraining("in school");
-                          })
-                        }
+                        onClick={(e) => {
+                          setTraining("in school");
+                          HideTextArea();
+                        }}
                       />
                       <label
                         class="custom-control-label"
@@ -261,12 +257,10 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="defaultGroupExample3"
                         name="groupOfDefaultRadios"
-                        onClick={
-                          (HideTextArea,
-                          (e) => {
-                            setTraining("Bachelor");
-                          })
-                        }
+                        onClick={(e) => {
+                          setTraining("Bachelor");
+                          HideTextArea();
+                        }}
                       />
                       <label
                         class="custom-control-label"
@@ -275,13 +269,17 @@ function MusicianRegister() {
                         Bachelor
                       </label>
                     </div>
+
                     <div class="custom-control custom-radio">
                       <input
                         type="radio"
                         class="custom-control-input"
                         id="defaultGroupExample4"
                         name="groupOfDefaultRadios"
-                        onClick={ShowTextArea}
+                        onClick={(e) => {
+                          setTraining("in school");
+                          ShowTextArea();
+                        }}
                       />
                       <label
                         class="custom-control-label"
@@ -290,11 +288,8 @@ function MusicianRegister() {
                         Other
                       </label>
                     </div>
-                    <div
-                      class="form-group shadow-textarea"
-                      id="myDIV"
-                      onLoad={HideTextArea}
-                    >
+
+                    <div class="form-group shadow-textarea" id="myDIV">
                       <label for="exampleFormControlTextarea6"></label>
                       <textarea
                         class="form-control z-depth-1"
@@ -309,16 +304,13 @@ function MusicianRegister() {
                   </ReactBootStrap.Col>
                 </ReactBootStrap.Row>
 
-                <ReactBootStrap.Form.Group controlId="formGridfname">
+                <ReactBootStrap.Form.Group>
                   <ReactBootStrap.Form.Label id="font">
                     Professional Information
                   </ReactBootStrap.Form.Label>
                 </ReactBootStrap.Form.Group>
 
-                <ReactBootStrap.Form.Group
-                  controlId="formGridlname"
-                  style={{ marginBottom: "1px" }}
-                >
+                <ReactBootStrap.Form.Group style={{ marginBottom: "1px" }}>
                   <ReactBootStrap.Form.Label>
                     <i>Instruments</i>
                   </ReactBootStrap.Form.Label>
@@ -369,9 +361,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style3"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style3">
                         Trumbone
                       </label>
                     </div>
@@ -379,9 +371,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style4"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style4">
                         Trumpet
                       </label>
                     </div>
@@ -389,9 +381,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style5"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style5">
                         Bass
                       </label>
                     </div>
@@ -402,9 +394,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style0"
+                        id="style6"
                       />
-                      <label class="custom-control-label" for="style0">
+                      <label class="custom-control-label" for="style6">
                         Singing
                       </label>
                     </div>
@@ -412,9 +404,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style1"
+                        id="style7"
                       />
-                      <label class="custom-control-label" for="style1">
+                      <label class="custom-control-label" for="style7">
                         Saxophone
                       </label>
                     </div>
@@ -422,9 +414,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style8"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style8">
                         Viola-Copper
                       </label>
                     </div>
@@ -432,9 +424,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style9"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style9">
                         Bassoon
                       </label>
                     </div>
@@ -442,9 +434,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style10"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style10">
                         Flute
                       </label>
                     </div>
@@ -452,9 +444,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style11"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style11">
                         Horn
                       </label>
                     </div>
@@ -465,9 +457,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style0"
+                        id="style12"
                       />
-                      <label class="custom-control-label" for="style0">
+                      <label class="custom-control-label" for="style12">
                         Guitar
                       </label>
                     </div>
@@ -475,9 +467,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style1"
+                        id="style13"
                       />
-                      <label class="custom-control-label" for="style1">
+                      <label class="custom-control-label" for="style13">
                         Accordion
                       </label>
                     </div>
@@ -485,9 +477,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style14"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style14">
                         Clarinet
                       </label>
                     </div>
@@ -495,9 +487,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style15"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style15">
                         Cello
                       </label>
                     </div>
@@ -505,9 +497,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style16"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style16">
                         Purcussion
                       </label>
                     </div>
@@ -515,9 +507,9 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style2"
+                        id="style17"
                       />
-                      <label class="custom-control-label" for="style2">
+                      <label class="custom-control-label" for="style17">
                         Alphorn
                       </label>
                     </div>
@@ -525,7 +517,6 @@ function MusicianRegister() {
                 </ReactBootStrap.Row>
 
                 <ReactBootStrap.Form.Group
-                  controlId="formGridlname"
                   style={{ marginBottom: "40px", marginTop: "15px" }}
                 >
                   <ReactBootStrap.Form.Control
@@ -534,10 +525,7 @@ function MusicianRegister() {
                   />
                 </ReactBootStrap.Form.Group>
 
-                <ReactBootStrap.Form.Group
-                  controlId="formGridlname"
-                  style={{ marginBottom: "1px" }}
-                >
+                <ReactBootStrap.Form.Group style={{ marginBottom: "1px" }}>
                   <ReactBootStrap.Form.Label>
                     <i>Music Styles</i>
                   </ReactBootStrap.Form.Label>
@@ -545,7 +533,7 @@ function MusicianRegister() {
 
                 <ReactBootStrap.Row>
                   <ReactBootStrap.Col md={{ span: 3 }}>
-                    <ReactBootStrap.Form.Group controlId="formGridlname">
+                    <ReactBootStrap.Form.Group>
                       <ReactBootStrap.Form.Label>
                         Classical Styles
                       </ReactBootStrap.Form.Label>
@@ -554,268 +542,13 @@ function MusicianRegister() {
                       <input
                         type="checkbox"
                         class="custom-control-input"
-                        id="style0"
+                        id="style18"
                         onChange={(e) => {
                           setStyle("baroque");
                         }}
                       />
-                      <label class="custom-control-label" for="style0">
-                        Baroque
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style1"
-                        onChange={(e) => {
-                          setStyle("classic");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style1">
-                        Classic
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style2"
-                        onChange={(e) => {
-                          setStyle("contemporary");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style2">
-                        Contemporary
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style3"
-                        onChange={(e) => {
-                          setStyle("lied");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style3">
-                        Lied
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style4"
-                        onChange={(e) => {
-                          setStyle("opera");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style4">
-                        Opera
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style5"
-                        onChange={(e) => {
-                          setStyle("romantic");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style5">
-                        Romantic
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style6"
-                        onChange={(e) => {
-                          setStyle("sacred");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style6">
-                        Sacred
-                      </label>
-                    </div>
-                  </ReactBootStrap.Col>
-
-                  <ReactBootStrap.Col md={{ span: 3 }}>
-                    <ReactBootStrap.Form.Group controlId="formGridlname">
-                      <ReactBootStrap.Form.Label>
-                        Popular Styles
-                      </ReactBootStrap.Form.Label>
-                    </ReactBootStrap.Form.Group>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style7"
-                        onChange={(e) => {
-                          setStyle("songwriter");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style7">
-                        Songwriter
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style8"
-                        onChange={(e) => {
-                          setStyle("blues");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style8">
-                        Blues
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style9"
-                        onChange={(e) => {
-                          setStyle("brass band");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style9">
-                        Brass band
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style10"
-                        onChange={(e) => {
-                          setStyle("musical comedy");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style10">
-                        Musical comedy
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style11"
-                        onChange={(e) => {
-                          setStyle("country");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style11">
-                        Country
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style12"
-                        onChange={(e) => {
-                          setStyle("fado");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style12">
-                        Fado
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style13"
-                        onChange={(e) => {
-                          setStyle("fanfare");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style13">
-                        Fanfare
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style14"
-                        onChange={(e) => {
-                          setStyle("flamenco");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style14">
-                        Flamenco
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style15"
-                        onChange={(e) => {
-                          setStyle("folk");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style15">
-                        Folk
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style16"
-                        onChange={(e) => {
-                          setStyle("swiss folk");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style16">
-                        Swiss Folk{" "}
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style17"
-                        onChange={(e) => {
-                          setStyle("french");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style17">
-                        French
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style18"
-                        onChange={(e) => {
-                          setStyle("irish");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style18">
-                        Irish
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style19"
-                        onChange={(e) => {
-                          setStyle("italian");
-                        }}
-                      />
                       <label class="custom-control-label" for="style19">
-                        Italian
+                        Baroque
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -824,11 +557,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style20"
                         onChange={(e) => {
-                          setStyle("klezmer");
+                          setStyle("classic");
                         }}
                       />
                       <label class="custom-control-label" for="style20">
-                        Klezmer
+                        Classic
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -837,11 +570,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style21"
                         onChange={(e) => {
-                          setStyle("mariachi");
+                          setStyle("contemporary");
                         }}
                       />
                       <label class="custom-control-label" for="style21">
-                        Mariachi
+                        Contemporary
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -850,11 +583,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style22"
                         onChange={(e) => {
-                          setStyle("popular");
+                          setStyle("lied");
                         }}
                       />
                       <label class="custom-control-label" for="style22">
-                        Popular
+                        Lied
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -863,24 +596,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style23"
                         onChange={(e) => {
-                          setStyle("rock");
-                        }}
-                      />
-                      <label class="custom-control-label" for="style23">
-                        Rock
-                      </label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="style24"
-                        onChange={(e) => {
-                          setStyle("salsa");
+                          setStyle("opera");
                         }}
                       />
                       <label class="custom-control-label" for="style24">
-                        Salsa
+                        Opera
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -889,11 +609,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style25"
                         onChange={(e) => {
-                          setStyle("tango");
+                          setStyle("romantic");
                         }}
                       />
                       <label class="custom-control-label" for="style25">
-                        Tango
+                        Romantic
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -902,19 +622,19 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style26"
                         onChange={(e) => {
-                          setStyle("world music");
+                          setStyle("sacred");
                         }}
                       />
                       <label class="custom-control-label" for="style26">
-                        World Music
+                        Sacred
                       </label>
                     </div>
                   </ReactBootStrap.Col>
 
                   <ReactBootStrap.Col md={{ span: 3 }}>
-                    <ReactBootStrap.Form.Group controlId="formGridlname">
+                    <ReactBootStrap.Form.Group>
                       <ReactBootStrap.Form.Label>
-                        Jazz Styles
+                        Popular Styles
                       </ReactBootStrap.Form.Label>
                     </ReactBootStrap.Form.Group>
                     <div class="custom-control custom-checkbox">
@@ -923,11 +643,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style27"
                         onChange={(e) => {
-                          setStyle("afro jazz");
+                          setStyle("songwriter");
                         }}
                       />
                       <label class="custom-control-label" for="style27">
-                        Afro Jazz
+                        Songwriter
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -936,11 +656,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style28"
                         onChange={(e) => {
-                          setStyle("songwriter");
+                          setStyle("blues");
                         }}
                       />
                       <label class="custom-control-label" for="style28">
-                        Songwriter
+                        Blues
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -949,11 +669,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style29"
                         onChange={(e) => {
-                          setStyle("be-bop");
+                          setStyle("brass band");
                         }}
                       />
                       <label class="custom-control-label" for="style29">
-                        Be-Bop
+                        Brass band
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -962,11 +682,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style30"
                         onChange={(e) => {
-                          setStyle("bossanova");
+                          setStyle("musical comedy");
                         }}
                       />
                       <label class="custom-control-label" for="style30">
-                        Bossanova
+                        Musical comedy
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -975,11 +695,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style31"
                         onChange={(e) => {
-                          setStyle("contemporary");
+                          setStyle("country");
                         }}
                       />
                       <label class="custom-control-label" for="style31">
-                        Contemporary
+                        Country
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -988,11 +708,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style32"
                         onChange={(e) => {
-                          setStyle("free jazz");
+                          setStyle("fado");
                         }}
                       />
                       <label class="custom-control-label" for="style32">
-                        Free Jazz
+                        Fado
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1001,11 +721,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style33"
                         onChange={(e) => {
-                          setStyle("funk");
+                          setStyle("fanfare");
                         }}
                       />
                       <label class="custom-control-label" for="style33">
-                        Funk
+                        Fanfare
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1014,11 +734,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style34"
                         onChange={(e) => {
-                          setStyle("gospel");
+                          setStyle("flamenco");
                         }}
                       />
                       <label class="custom-control-label" for="style34">
-                        Gospel
+                        Flamenco
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1027,11 +747,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style35"
                         onChange={(e) => {
-                          setStyle("jazz");
+                          setStyle("folk");
                         }}
                       />
                       <label class="custom-control-label" for="style35">
-                        Jazz
+                        Folk
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1040,11 +760,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style36"
                         onChange={(e) => {
-                          setStyle("latic jaz");
+                          setStyle("swiss folk");
                         }}
                       />
                       <label class="custom-control-label" for="style36">
-                        Latin Jazz{" "}
+                        Swiss Folk{" "}
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1053,11 +773,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style37"
                         onChange={(e) => {
-                          setStyle("manouche");
+                          setStyle("french");
                         }}
                       />
                       <label class="custom-control-label" for="style37">
-                        Manouche
+                        French
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1066,11 +786,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style38"
                         onChange={(e) => {
-                          setStyle("new orleans");
+                          setStyle("irish");
                         }}
                       />
                       <label class="custom-control-label" for="style38">
-                        New Orleans
+                        Irish
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1079,11 +799,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style39"
                         onChange={(e) => {
-                          setStyle("R'n'B");
+                          setStyle("italian");
                         }}
                       />
                       <label class="custom-control-label" for="style39">
-                        R'n'B
+                        Italian
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1092,11 +812,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style40"
                         onChange={(e) => {
-                          setStyle("salsa");
+                          setStyle("klezmer");
                         }}
                       />
                       <label class="custom-control-label" for="style40">
-                        Salsa
+                        Klezmer
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1105,11 +825,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style41"
                         onChange={(e) => {
-                          setStyle("drunk");
+                          setStyle("mariachi");
                         }}
                       />
                       <label class="custom-control-label" for="style41">
-                        Drunk
+                        Mariachi
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1118,11 +838,11 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style42"
                         onChange={(e) => {
-                          setStyle("swing");
+                          setStyle("popular");
                         }}
                       />
                       <label class="custom-control-label" for="style42">
-                        Swing
+                        Popular
                       </label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -1131,10 +851,278 @@ function MusicianRegister() {
                         class="custom-control-input"
                         id="style43"
                         onChange={(e) => {
-                          setStyle("traditional");
+                          setStyle("rock");
                         }}
                       />
                       <label class="custom-control-label" for="style43">
+                        Rock
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style44"
+                        onChange={(e) => {
+                          setStyle("salsa");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style44">
+                        Salsa
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style45"
+                        onChange={(e) => {
+                          setStyle("tango");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style45">
+                        Tango
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style46"
+                        onChange={(e) => {
+                          setStyle("world music");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style46">
+                        World Music
+                      </label>
+                    </div>
+                  </ReactBootStrap.Col>
+
+                  <ReactBootStrap.Col md={{ span: 3 }}>
+                    <ReactBootStrap.Form.Group>
+                      <ReactBootStrap.Form.Label>
+                        Jazz Styles
+                      </ReactBootStrap.Form.Label>
+                    </ReactBootStrap.Form.Group>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style47"
+                        onChange={(e) => {
+                          setStyle("afro jazz");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style47">
+                        Afro Jazz
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style48"
+                        onChange={(e) => {
+                          setStyle("songwriter");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style48">
+                        Songwriter
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style49"
+                        onChange={(e) => {
+                          setStyle("be-bop");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style49">
+                        Be-Bop
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style50"
+                        onChange={(e) => {
+                          setStyle("bossanova");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style50">
+                        Bossanova
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style51"
+                        onChange={(e) => {
+                          setStyle("contemporary");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style51">
+                        Contemporary
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style52"
+                        onChange={(e) => {
+                          setStyle("free jazz");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style52">
+                        Free Jazz
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style53"
+                        onChange={(e) => {
+                          setStyle("funk");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style53">
+                        Funk
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style54"
+                        onChange={(e) => {
+                          setStyle("gospel");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style54">
+                        Gospel
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style55"
+                        onChange={(e) => {
+                          setStyle("jazz");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style55">
+                        Jazz
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style56"
+                        onChange={(e) => {
+                          setStyle("latic jaz");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style56">
+                        Latin Jazz{" "}
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style57"
+                        onChange={(e) => {
+                          setStyle("manouche");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style57">
+                        Manouche
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style58"
+                        onChange={(e) => {
+                          setStyle("new orleans");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style58">
+                        New Orleans
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style59"
+                        onChange={(e) => {
+                          setStyle("R'n'B");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style59">
+                        R'n'B
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style60"
+                        onChange={(e) => {
+                          setStyle("salsa");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style60">
+                        Salsa
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style61"
+                        onChange={(e) => {
+                          setStyle("drunk");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style61">
+                        Drunk
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style62"
+                        onChange={(e) => {
+                          setStyle("swing");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style62">
+                        Swing
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="style63"
+                        onChange={(e) => {
+                          setStyle("traditional");
+                        }}
+                      />
+                      <label class="custom-control-label" for="style63">
                         Traditional
                       </label>
                     </div>
