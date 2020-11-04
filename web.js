@@ -4,10 +4,10 @@ var app = express();
 app.use(express.logger());
 
 var db_config = {
-    host: 'us-cdbr-east-04.cleardb.com',
-    user: 'b6d6c6e8740d20',
-    password: 'b3f75ada',
-    database: 'heroku_1daa39da0375291'
+    host: 'localhost',
+    user: 'root',
+    password: 'Anantharajah123!',
+    database: 'test'
 };
 
 var connection;
