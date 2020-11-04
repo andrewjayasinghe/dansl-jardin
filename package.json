@@ -1,38 +1,12 @@
 {
-  "name": "tedxabbotsford",
-  "version": "0.1.0",
-  "private": true,
+  "name": "node-example",
+  "version": "0.0.1",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.20.0",
-    "bcrypt": "^5.0.0",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.6",
-    "react": "^16.14.0",
-    "react-scripts": "3.4.3"
+    "express": "3.1.x"
+    , "mysql": ""
   },
-  "scripts": {
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm start",
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
   }
 }
