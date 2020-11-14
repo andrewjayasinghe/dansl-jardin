@@ -1,11 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser')
-const mysql = require("mysql");
 const path = require('path');
-const app = express();
 const helmet = require('helmet') // creates headers that protect from attacks (security)
-const cors = require('cors')  // allows/disallows cross-site communication
-app.use(bodyParser.json());
+const express = require("express");
+const app = express();
+const mysql = require("mysql");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;  // allows/disallows cross-site communication
+
+// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 
@@ -19,45 +24,120 @@ const db = mysql.createPool({
 
 // --> Add this
 // ** MIDDLEWARE ** //
-const whitelist = ['http://localhost:3000', 'http://localhost:8080']
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin)
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable")
-      callback(null, true)
-    } else {
-      console.log("Origin rejected")
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+// const whitelist = ['http://localhost:3000', 'http://localhost:8080']
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log("** Origin of request " + origin)
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       console.log("Origin acceptable")
+//       callback(null, true)
+//     } else {
+//       console.log("Origin rejected")
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   },
+//   methods: ["GET", "POST", "PUT"],
+//   credentials: true
+// }
+
 app.use(helmet())
 // --> Add this
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: ["http://localhost:8080"],
+    methods: ["GET", "POST", "PUT"],
+    credentials: true,
+  })
+);
+app.use(cookieParser());
+app.use(express.json());
 
-// app.get("/order/get/", (req, res) => {
-//   const sqlSelect = "SELECT * FROM test";
-//   db.query(sqlSelect, (err, result) => {
-//     res.send(result);
-//   });
-// });
 
-app.get('/api/', (req, res) => {
-  res.send({ people: 'You want to see people I assume' });
-});
-app.get('/api/order/', (req, res) => {
-  res.send("THIS WORKS COOL");
-});
-// app.post('/api/', (req, res) => {
-//   res.send(
-//     `Person created: ${req.body.person.name}`,
-//   );
-// });
+app.use(
+  session({
+    key: "userID",
+    secret: "dansljardin",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      expires: 60 * 60 * 60,
+    },
+  })
+);
 
 
 
 ////////////////////////////////////// NEW STUFF ///////////////////////////////////////////////////
+
+app.post("/register", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  bcrypt.hash(password, saltRounds, (err, hash) => {
+    if (err) {
+      console.log(err);
+    }
+    db.query(
+      "INSERT INTO users (username, password, role) VALUES (?, ?, 'musician')",
+      [username, hash],
+      (err, result) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log("Succesfully Registered")
+        }
+      }
+    );
+  });
+});
+
+app.get("/login", (req, res) => {
+  if (req.session.user) {
+    res.send({loggedIn: true, user: req.session.user})
+  } else {
+    res.send({loggedIn: false});
+  }
+});
+
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  db.query(
+    "SELECT * FROM users WHERE username = ?;",
+    username,
+    (err, result) => {
+      if (err) {
+        res.send({ err: err });
+        console.log({ err: err });
+      }
+      if (result.length > 0) {
+        bcrypt.compare(password, result[0].password, (error, response) => {
+          if (response) {
+            req.session.user = result;
+            // console.log(req.session.user);
+            res.send(result);
+            console.log("Sucessfully Logged In");
+          } else {
+            res.send({ message: "Wrong username/password combination!" });
+            // console.log({ message: "Wrong username/password combination!" });
+          }
+        });
+      } else {
+        res.send({ message: "User doesn't exist" });
+        // console.log({ message: "User doesn't exist" });
+      }
+    }
+  );
+});
+
+app.get("/order/get", (req, res) => {
+  const sqlSelect = "SELECT * FROM ordering_table";
+  db.query(sqlSelect, (err, result) => {
+    res.send(result);
+  });
+});
 
 app.post("/order/insert", (req, res) => {
   const orderGift = req.body.orderGift;
@@ -103,18 +183,178 @@ app.post("/order/insert", (req, res) => {
       orderComments,
     ],
     (err, result) => {
-      console.log(result);
-      console.log(err);
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("Created New Order")
+      }
     }
   );
 });
 
-app.get("/order/get", (req, res) => {
-  const sqlSelect = "SELECT * FROM ordering_table";
+app.get("/musician/get", (req, res) => {
+  const sqlSelect = "SELECT * FROM musician_table";
   db.query(sqlSelect, (err, result) => {
     res.send(result);
   });
 });
+
+app.post("/musician/insert", (req, res) => {
+  const musicianFirstName = req.body.musicianFirstName;
+  const musicianLastName = req.body.musicianLastName;
+  const musicianAddress = req.body.musicianAddress;
+  const musicianPostalCode = req.body.musicianPostalCode;
+  const musicianCity = req.body.musicianCity;
+  const musicianProvince = req.body.musicianProvince;
+  const musicianPhone = req.body.musicianPhone;
+  const musicianIban = req.body.musicianIban;
+  const musicianEmail = req.body.musicianEmail;
+  const musicianPassword = req.body.musicianPassword;
+  const musicianConfirmPassword = req.body.musicianConfirmPassword;
+  const musicianTraining = req.body.musicianTraining;
+  const musicianOtherTraining = req.body.musicianOtherTraining;
+  const musicianInstrument = req.body.musicianInstrument;
+  const musicianStyle = req.body.musicianStyle;
+  const musicianGroup = req.body.musicianGroup;
+  const musicianSite = req.body.musicianSite;
+  const musicianMedia = req.body.musicianMedia;
+
+  const musicianMonday = req.body.monday;
+  const musicianTuesday = req.body.tuesday;
+  const musicianWednesday = req.body.wednesday;
+  const musicianThursday = req.body.thursday;
+  const musicianFriday = req.body.friday;
+  const musicianSaturday = req.body.saturday;
+  const musicianSunday = req.body.sunday;
+
+
+  const sqlInsert =
+    "INSERT INTO musician_table (firstName, lastName, address, postalCode, city, province, phone, iban, email, training, instrument, style, number_musicians, site, media) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  db.query(
+    sqlInsert,
+    [
+      musicianFirstName,
+      musicianLastName,
+      musicianAddress,
+      musicianPostalCode,
+      musicianCity,
+      musicianProvince,
+      musicianPhone,
+      musicianIban,
+      musicianEmail,
+      musicianTraining,
+      musicianInstrument,
+      musicianStyle,
+      musicianGroup,
+      musicianSite,
+      musicianMedia
+
+      // musicianMonday,
+      // musicianTuesday,
+      // musicianWednesday,
+      // musicianThursday,
+      // musicianFriday,
+      // musicianSaturday,
+      // musicianSunday
+    ],
+
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("Sucesfully Inserted Musician")
+      }
+    }
+  );
+});
+
+app.post("/musicianOrder/insert", (req, res) => {
+  const orderID = req.body.setOrderID;
+  const musicianID = req.body.setMusicianID;
+
+  const sqlInsert =
+    "INSERT INTO musician_orders (orderID, musicianID) VALUES (?, ?)";
+  db.query(sqlInsert, [orderID, musicianID], (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("-> Succesfully Added Order")
+    }
+  });
+});
+
+
+
+app.get("/match/musician", (req, res) => {
+  var musicianEmail = "Harish@email.com"
+
+  if (req.session.user) {
+    musicianEmail = req.session.user[0].username;
+    // console.log(req.session.user[0].username);
+  }
+
+  // const musicianEmail = req.body.musicianEmail;
+  
+  // const musicianID = req.body.setMusicianID;
+
+  const sqlGet = "SELECT * FROM musician_table WHERE email = ?";
+  db.query(sqlGet, [musicianEmail], (err, result) => {
+    res.send(result);
+  });
+});
+
+
+app.get("/match/orders/:musicianID", (req, res) => {
+  const id = req.params.musicianID;
+
+  // const musicianEmail = req.body.musicianEmail;
+  
+  // const musicianID = req.body.setMusicianID;
+
+  const sqlGet = "SELECT ot.id, ot.gift, ot.occasion, ot.type, ot.number_musicians, ot.suprise, ot.firstName, ot.lastName, ot.date_service, ot.time_service, ot.offered, ot.number, ot.email, ot.address, ot.address_2, ot.city, ot.state, ot.zip, ot.comments FROM ordering_table as ot INNER JOIN musician_orders ON ot.id = musician_orders.orderID WHERE musician_orders.musicianID = ?";
+  db.query(sqlGet, id, (err, result) => {
+    res.send(result);
+  });
+});
+
+app.put("/musician/update", (req, res) => {
+  const id = req.body.musicianID;
+
+  const firstName = req.body.musicianFirstName;
+  const lastName = req.body.musicianLastName;
+  const phone = req.body.musicianPhone;
+  const email = req.body.musicianEmail;
+  const address = req.body.musicianAddress;
+  const training = req.body.musicianTraining;
+  // const group = req.body.musicianGroup;
+  const sqlUpdate = "UPDATE musician_table SET firstName = ?, lastName = ?, phone = ?, email = ?, address = ?, training = ? WHERE id = ?";
+  db.query(sqlUpdate, [
+    firstName,
+    lastName,
+    phone,
+    email,
+    address,
+    training,
+    id
+  ], (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("Succesfully Updated")
+    }
+  });
+});
+
+
+app.get("/match/musicians/:orderID", (req, res) => {
+  const id = req.params.orderID;
+
+  const sqlGet = "SELECT musician_table.* FROM ordering_table, musician_table WHERE ordering_table.id = ? AND ordering_table.city = musician_table.city";
+  db.query(sqlGet, id, (err, result) => {
+    res.send(result);
+  });
+});
+
 
 
 
