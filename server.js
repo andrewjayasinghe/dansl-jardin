@@ -24,32 +24,34 @@ const db = mysql.createPool({
 
 // --> Add this
 // ** MIDDLEWARE ** //
-const whitelist = ['http://localhost:3000', 'http://localhost:8080']
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin)
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable")
-      callback(null, true)
-    } else {
-      console.log("Origin rejected")
-      callback(new Error('Not allowed by CORS'))
-    }
-  },
-  methods: ["GET", "POST", "PUT"],
-  credentials: true
-}
+// const whitelist = ['http://localhost:3000', 'http://localhost:8080']
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log("** Origin of request " + origin)
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       console.log("Origin acceptable")
+//       callback(null, true)
+//     } else {
+//       console.log("Origin rejected")
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   },
+//   methods: ["GET", "POST", "PUT"],
+//   credentials: true
+// }
 
 app.use(helmet())
 // --> Add this
-app.use(cors(corsOptions));
-// app.use(
-//   cors({
-//     origin: ["http://localhost:8080"],
-//     methods: ["GET", "POST", "PUT"],
-//     credentials: true,
-//   })
-// );
+// app.use(cors(corsOptions));
+
+app.use(
+  cors({
+    origin: ["http://localhost:8080"],
+    methods: ["GET", "POST", "PUT"],
+    credentials: true,
+  })
+);
+
 app.use(cookieParser());
 app.use(express.json());
 
