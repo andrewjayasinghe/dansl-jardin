@@ -35,7 +35,7 @@ function Login() {
         setLoginStatus("Logged In");
         // console.log(setLoginStatus)
         // TODO: FIX REDIRECT MAKE PROTECTED ROUTE /ADMIN
-        window.location.href = "http://localhost:3000/#/main";
+        window.location.href = "https://dansljardin.herokuapp.com/#/main";
       }
     });
   };
