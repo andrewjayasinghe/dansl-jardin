@@ -32,7 +32,7 @@ function MusicianDashboard() {
 
 
   const updateMusician = () => {
-    Axios.put("http://localhost:5000/musician/update", {
+    Axios.put("/musician/update", {
         musicianID: musicianDetails.id,
         musicianFirstName: firstName,
         musicianLastName: lastName,
@@ -51,7 +51,7 @@ function MusicianDashboard() {
   Axios.defaults.withCredentials = true;
 
 //   useEffect(() => {
-//     Axios.get("http://localhost:5000/login").then((response) => {
+//     Axios.get("/login").then((response) => {
 //       if (response.data.loggedIn == true) {
 //         setUser(response.data.user[0].username);
 //       }
@@ -59,7 +59,7 @@ function MusicianDashboard() {
 //   }, []);
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/match/musician", {
+    Axios.get("/match/musician", {
         musicianEmail: user
     }).then((response) => {
         setMusicianDetails(response.data[0])
@@ -75,7 +75,7 @@ function MusicianDashboard() {
 //   }, []);
 
   const getOrders = (id) => {
-    Axios.get(`http://localhost:5000/match/orders/${id}`).then((response) => {
+    Axios.get(`/match/orders/${id}`).then((response) => {
         // console.log(response.data);
         setOrders(response.data);
     });

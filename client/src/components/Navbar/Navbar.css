@@ -1,3 +1,5 @@
+
+
 .color-nav {
     /* background-color: #2a3c434f; */
     background-color: #2a3c43cc;
@@ -39,15 +41,6 @@
     }
   }
 
-  @media screen and (orientation: portrait) {
-      .nav-font {
-          margin-left: 0px;
-      }
-
-      .navDropDown {
-          margin-left: -15%;
-      }
-  }
 #home {
     color: red;
 }
