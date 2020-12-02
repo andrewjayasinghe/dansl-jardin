@@ -860,14 +860,14 @@ function editType() {
 
         <Form.Row className="justify-content-md-center">
           <Form.Group as={Col} xs={6} controlId="formGridFirstName">
-            <Form.Control className="form-control" required minLength="3" type="text" id="fNameField" placeholder="First Name" onChange={(e) => { setFirstName(e.target.value); }} />
+            <Form.Control className="form-control" required minLength="2" type="text" id="fNameField" placeholder="First Name" onChange={(e) => { setFirstName(e.target.value); }} />
             <span id="fNameLabelOK">Looks Good!</span>
             <span id="fNameLabelReq">First Name is required!</span>
             <span id="fNameLabelLen"></span>
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridLastName">
-            <Form.Control className="form-control" required minLength="3" type="text" placeholder="Last Name" onChange={(e) => { setLastName(e.target.value); }} />
+            <Form.Control className="form-control" required minLength="2" type="text" placeholder="Last Name" onChange={(e) => { setLastName(e.target.value); }} />
             <span id="lNameLabelOK">Looks Good!</span>
             <span id="lNameLabelReq">Last Name is required!</span>
             <span id="lNameLabelLen"></span>
@@ -1012,7 +1012,7 @@ function editType() {
       <ReactBootStrap.Container className="bg-display" id="order6">
 
         <ReactBootStrap.Row className="justify-content-md-center">
-          <ReactBootStrap.Col><h3>6. Good. Is this a suprise?</h3></ReactBootStrap.Col>
+          <ReactBootStrap.Col><h3>6. Good. Is this a surprise?</h3></ReactBootStrap.Col>
         </ReactBootStrap.Row>
 
         <ReactBootStrap.Row className="justify-content-md-center">
@@ -1034,7 +1034,7 @@ function editType() {
         <ReactBootStrap.Row>
           <ReactBootStrap.Col style={{ marginTop: '20px' }}>
             <div class="buttonAlign">
-              <input type="button" value="Back" className="ordering_back_button" onClick={back6}/>
+              <input type="button" value="Back" className="ordering_back_button" onClick={back6} style={{marginRight:"0px"}}/>
               {/* <ReactBootStrap.Button variant="danger" className='button' onClick={back6}>Back</ReactBootStrap.Button> */}
             </div>
           </ReactBootStrap.Col>
@@ -1191,7 +1191,7 @@ function editType() {
             </Form.Row>
           </MediaQuery>
 
-          <div class="buttonAlign">
+          <div class="buttonAlign" style={{paddingTop:"50px", paddingBottom:"100px"}}>
             <input type="button" value="Back" className="ordering_back_button" onClick={back8}/>
             <input type="button" value="Next" className="ordering_next_button" type="submit"/>
             {/* <ReactBootStrap.Button variant="danger" className='button' onClick={back8}>Back</ReactBootStrap.Button>
@@ -1358,7 +1358,7 @@ function editType() {
 
           <ReactBootStrap.Row>
               <ReactBootStrap.Col md="auto">
-                <p className="intro">Suprise concert:</p>
+                <p className="intro">Surprise concert:</p>
               </ReactBootStrap.Col>
               <ReactBootStrap.Col md="auto">
                 <p>{suprise}</p>
@@ -1605,7 +1605,7 @@ function editType() {
 
           <ReactBootStrap.Row>
               <ReactBootStrap.Col md="auto">
-                <p className="intro">Suprise concert:</p>
+                <p className="intro">Surprise concert:</p>
               </ReactBootStrap.Col>
               <ReactBootStrap.Col md="auto">
                 <Form.Row >
@@ -1630,7 +1630,7 @@ function editType() {
                         <option>classic</option>
                         <option>popular</option>
                         <option>jazzy/pop</option>
-                        <option>suprise</option>
+                        <option>surprise</option>
                       </Form.Control>
                     </Form.Group>
                   </Form.Row>

@@ -558,6 +558,7 @@ h3 {
  .intro {
     color: rgb(223, 84, 107);
     text-align: left;
+    width: 150px;
   }
 
 .confirmHeader {
@@ -618,6 +619,11 @@ h3 {
 }
 
   @media only screen and (orientation: portrait) {
+    .intro {
+      color: rgb(223, 84, 107);
+      text-align: left;
+      width: 250px;
+    }
     .bg-display-test {
       width: 70%;
       margin-bottom: 2em;

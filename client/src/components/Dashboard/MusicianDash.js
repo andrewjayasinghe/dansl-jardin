@@ -337,12 +337,12 @@ function MusicianDashboard() {
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.training} onChange={(e) => { training = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="field_align">
+                    {/* <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Style: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.style} /></ReactBootStrap.Col>
-                    </ReactBootStrap.Row>
+                    </ReactBootStrap.Row> */}
 
                     <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
