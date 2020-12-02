@@ -50,7 +50,7 @@ app.use(helmet())
 app.use(
   cors({
     origin: ["http://localhost:8080"],
-    methods: ["GET", "POST", "PUT"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -66,7 +66,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      expires: 60 * 60 * 60,
+      expires: 60 * 60 * 60 * 30,
     },
   })
 );
@@ -156,6 +156,15 @@ app.post("/register", (req, res) => {
 app.get("/login", (req, res) => {
   if (req.session.user) {
     res.send({loggedIn: true, user: req.session.user})
+  } else {
+    res.send({loggedIn: false});
+  }
+});
+
+app.get("/logout", (req, res) => {
+  if (req.session.user) {
+    req.session.user = "";
+    res.send({loggedIn: false, user: ""})
   } else {
     res.send({loggedIn: false});
   }
@@ -270,7 +279,7 @@ app.post("/musician/insert", (req, res) => {
   const musicianCity = req.body.musicianCity;
   const musicianProvince = req.body.musicianProvince;
   const musicianPhone = req.body.musicianPhone;
-  const musicianIban = req.body.musicianIban;
+  const musicianIban = req.body.musicianEtransfer;
   const musicianEmail = req.body.musicianEmail;
   const musicianPassword = req.body.musicianPassword;
   const musicianConfirmPassword = req.body.musicianConfirmPassword;
@@ -492,8 +501,27 @@ app.get("/match/musicians/:orderID", (req, res) => {
   });
 });
 
+app.delete('/order/delete/:orderID', (req, res) => {
+  const orderID = req.params.orderID;
 
+  const sqlDelete = "DELETE FROM ordering_table WHERE id = ?";
 
+  db.query(sqlDelete, orderID, (err, result) => {
+    if (err) console.log(err)
+    if (result) console.log("Order", orderID, "deleted");
+  });
+});
+
+app.delete('/musician/delete/:musicianID', (req, res) => {
+  const musicianID = req.params.musicianID;
+
+  const sqlDelete = "DELETE FROM musician_table WHERE id = ?";
+
+  db.query(sqlDelete, musicianID, (err, result) => {
+    if (err) console.log(err)
+    if (result) console.log("Musician", musicianID, "deleted");
+  });
+});
 
 
 

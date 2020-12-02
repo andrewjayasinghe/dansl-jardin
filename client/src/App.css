@@ -3,7 +3,9 @@
 }
 
 body {
-  background-color:rgba(42, 60, 67, 0.72);
+  /* background-color:rgba(42, 60, 67, 0.72); */
+  background-color: #2a3c43;
+
 }
 
 .App-logo {
@@ -18,7 +20,7 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

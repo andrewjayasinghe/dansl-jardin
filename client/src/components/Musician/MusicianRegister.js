@@ -1,15 +1,16 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import ScheduleSelector from 'react-schedule-selector';
 import Axios from "axios";
 import "./MusicianRegister.css";
 import "mdbreact/dist/css/mdb.css";
-import { Satellite } from "@material-ui/icons";
+// import { Satellite } from "@material-ui/icons";
 
 // ######## This function is used to 
 // set the date variables that will be used to send the calander details into the database.#####  
 
 function MusicianRegister() {
+
 
   const [state, setSchedule] = useState({});
   const [mon, setMon] = useState("");
@@ -48,32 +49,32 @@ function MusicianRegister() {
 
 
     for (let index = 0; index < state.schedule.length; index++) {
-      if (state.schedule[index].getDate() == 2) {
+      if (state.schedule[index].getDate() === 2) {
         let monHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         monx.push(monHour);
 
-      } if (state.schedule[index].getDate() == 3) {
+      } if (state.schedule[index].getDate() === 3) {
         let tueHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         tuex.push(tueHour);
 
-      } if (state.schedule[index].getDate() == 4) {
+      } if (state.schedule[index].getDate() === 4) {
         let wedHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         wedx.push(wedHour);
 
 
-      } if (state.schedule[index].getDate() == 5) {
+      } if (state.schedule[index].getDate() === 5) {
         let thuHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         thux.push(thuHour);
 
-      } if (state.schedule[index].getDate() == 6) {
+      } if (state.schedule[index].getDate() === 6) {
         let friHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         frix.push(friHour);
 
-      } if (state.schedule[index].getDate() == 7) {
+      } if (state.schedule[index].getDate() === 7) {
         let satHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         satx.push(satHour);
 
-      } if (state.schedule[index].getDate() == 8) {
+      } if (state.schedule[index].getDate() === 8) {
         let sunHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
         sunx.push(sunHour);
       }
@@ -93,8 +94,8 @@ function MusicianRegister() {
     setSat(JSON.stringify(satx));
     setSun(JSON.stringify(sunx));
     setDate_time(JSON.stringify(dateObj));
-
-    if (state.schedule.length == 0) {
+    console.log(date_time);
+    if (state.schedule.length === 0) {
       alert("nothing has been selected")
     } else {
          document.getElementById("regedit").style.display = "initial";
@@ -147,7 +148,8 @@ function MusicianRegister() {
   const [confirmpassword, setConfirmPassword] = useState("");
 
   const [training, setTraining] = useState("");
-  const [othertraining, setOtherTraining] = useState("");
+  // const [othertraining, setOtherTraining] = useState("");
+  const [othertraining] = useState("");
 
   const [instrument, setInstrument] = useState([]);
   const [style, setStyle] = useState("");
@@ -192,14 +194,21 @@ function MusicianRegister() {
     }).then(() => {
       alert("sucessful insert");
     });
+    Axios.post("/register", {
+      username: email,
+      password: password
+    }).then((response) => {
+      console.log(response);
+    });
+    window.location.reload();
   };
 
   return (
-    <ReactBootStrap.Container className="top-space">
+    <ReactBootStrap.Container className="musregtop_space">
       <div className='display-reg'>
         <ReactBootStrap.Row className="justify-content-md-center">
           <ReactBootStrap.Col>
-            <h1 class="info">Register as a Musician!</h1>
+            <h1 class="info">Musician Register</h1>
           </ReactBootStrap.Col>
         </ReactBootStrap.Row>
 
@@ -225,7 +234,7 @@ function MusicianRegister() {
                 <ReactBootStrap.Form.Group controlId="formGridlname">
                   <ReactBootStrap.Form.Control
                     type="text"
-                    placeholder="last Name"
+                    placeholder="Last Name"
                     onChange={(e) => {
                       setLastName(e.target.value);
                     }}
@@ -365,7 +374,7 @@ function MusicianRegister() {
                           }
                         />
                         <span>Master</span>
-                      </label>
+                      </label><br/>
 
                       <label for="inschool" className='register'>
                         <input
@@ -708,7 +717,7 @@ function MusicianRegister() {
                   <input
                     type="text"
                     id="otherInstruments"
-                    placeholder="Other Isntruments.."
+                    placeholder="Other Instruments.."
 
 
                   />
@@ -1163,6 +1172,7 @@ function MusicianRegister() {
                   <ReactBootStrap.Form.Label>
                     <i>Media</i>
                   </ReactBootStrap.Form.Label>
+                  <h4>Please send us links where we will have the possibility to hear you playing, in order to have an idea of your style</h4>
 
                   {/* ########## (MEDIA) ########## */}
 
@@ -1209,7 +1219,7 @@ function MusicianRegister() {
 {/* #####This section is for the calender on the musician registration page####### */}
 
 
-          <div className='calender' >
+          <div className='calender'>
 
             <ScheduleSelector
               selection={state.schedule}
@@ -1222,25 +1232,15 @@ function MusicianRegister() {
               timeFormat='h:mma'
               hoveredColor='none'
               onChange={handleChange}
+              hoveredColor='#4d6b0f'
+              unselectedColor='#81A92F'
+              selectedColor='#4d6b0f'
             />
           </div>
           <ReactBootStrap.Row className="justify-buttons">
-            <ReactBootStrap.Button
-              variant="primary"
-              size="md"
-              onClick={seperate}>
-              Save Calander
-                    </ReactBootStrap.Button>
+            <input type="button" value="Save Schedule" className="cal_button" onClick={seperate} />
+            <a href="/#/"><input style={{marginLeft:"20px"}} type="button" value="Submit Form" className="sub_button" onClick={submitMusician} id="regedit"/></a>
 
-            <ReactBootStrap.Button
-              variant="danger"
-              size="md"
-              id="regedit"
-              href="/#/"
-              onClick={submitMusician}
-            >
-              Submit Form
-                </ReactBootStrap.Button>
 
           </ReactBootStrap.Row>
 

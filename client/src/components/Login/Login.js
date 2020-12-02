@@ -1,11 +1,11 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import * as ReactBootStrap from "react-bootstrap";
 import './Login.css'
 
 function Login() {
-  const [usernameReg, setUsernameReg] = useState("");
-  const [passwordReg, setPasswordReg] = useState("");
+  // const [usernameReg, setUsernameReg] = useState("");
+  // const [passwordReg, setPasswordReg] = useState("");
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -14,14 +14,14 @@ function Login() {
 
   Axios.defaults.withCredentials = true;
 
-  const register = () => {
-    Axios.post("/register", {
-      username: usernameReg,
-      password: passwordReg
-    }).then((response) => {
-      // console.log(response);
-    });
-  };
+  // const register = () => {
+  //   Axios.post("/register", {
+  //     username: usernameReg,
+  //     password: passwordReg
+  //   }).then((response) => {
+  //     // console.log(response);
+  //   });
+  // };
 
   const login = () => {
     Axios.post("/login", {
@@ -29,20 +29,20 @@ function Login() {
       password: password
     }).then((response) => {
       if (response.data.message) {
-        setLoginStatus("Error Wrong Login");
+        setLoginStatus("Error Wrong Login", loginStatus);
         // console.log(setLoginStatus)
       } else {
-        setLoginStatus("Logged In");
+        setLoginStatus("Logged In", loginStatus);
         // console.log(setLoginStatus)
         // TODO: FIX REDIRECT MAKE PROTECTED ROUTE /ADMIN
-        window.location.href = "https://dansljardin.herokuapp.com/#/main";
+        window.location.href = process.env.PUBLIC_URL + "/#/main";
       }
     });
   };
 
   useEffect(() => {
     Axios.get("/login").then((response) => {
-      if (response.data.loggedIn == true) {
+      if (response.data.loggedIn === true) {
         setLoginStatus(response.data.user[0].username);
       }
     })

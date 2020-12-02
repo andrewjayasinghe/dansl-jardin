@@ -1,13 +1,19 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import * as ReactBootStrap from "react-bootstrap";
 import "./MusicianDashboard.css";
-import Scheduler from "./MusicianCalander";
-import { Box } from "@material-ui/core";
+import ScheduleSelector from 'react-schedule-selector';
+// import { Box } from "@material-ui/core";
 // import MusicianRequests from "./MusicianRequests";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 function MusicianDashboard() {
 
+    const [state, setSchedule] = useState({});
+    const handleChange = newSchedule => {
+        setSchedule({ schedule: newSchedule });
+    
+      }
 
     const [user, setUser] = useState("");
     const [orders, setOrders] = useState([]);
@@ -51,17 +57,25 @@ function MusicianDashboard() {
         }).then(() => {
             alert("sucessful insert");
         });
+        window.location.reload();
     };
 
     Axios.defaults.withCredentials = true;
 
     useEffect(() => {
         Axios.get("/login").then((response) => {
-            if (response.data.loggedIn == true) {
+            if (response.data.loggedIn === true) {
                 setUser(response.data.user[0].username);
             }
         });
     }, []);
+
+    const logout = () => {
+        Axios.get("/logout").then((response) => {
+                setUser("");
+                console.log(user)
+        });
+    };
 
     useEffect(() => {
         Axios.get("/match/musician", {
@@ -72,7 +86,7 @@ function MusicianDashboard() {
 
             // console.log(response.data[0]);
         });
-    }, []);
+    }, [user]);
 
     //   useEffect(() => {
     //       if (musicianDetails)
@@ -110,7 +124,7 @@ function MusicianDashboard() {
             orderID: id,
             musicianID: musicianDetails.id,
             status: "Confirmed",
-            comment: "Accepted",
+            comment: commentBox,
             orderEmail: email
         }).then(() => {
             alert("sucessful insert");
@@ -141,20 +155,17 @@ function MusicianDashboard() {
 
 
     function show(t,r) {
-       
         var textArea = document.getElementById(t);
         textArea.style.display = "initial"; 
         var but = document.getElementById(r);
         but.style.display = "initial"; 
-        
     }
 
-    function hide(p) {
+    // function hide(p) {
        
-        var button = document.getElementById(p);
-        button.style.display = "none";        
-    }
-      
+    //     var button = document.getElementById(p);
+    //     button.style.display = "none";        
+    // }
 
     function active() {
         var x = document.getElementById("profile")
@@ -251,6 +262,10 @@ function MusicianDashboard() {
                                     <p className="navText" id="profile" onClick={(e) => { active(); showProfile() }}>PROFILE</p>
                                     <p className="navText" id="schedule" onClick={(e) => { active3(); showSchedule() }}>SCHEDULE</p>
                                     <p className="navText" id="stats" onClick={(e) => { active4(); showStats() }}>ORDERS</p>
+                                    <a href="/#/"><p className="navText" onClick={logout}><ExitToAppIcon />LOGOUT</p></a>
+                                    {/* <div style={{marginLeft:"auto"}}><input type="button" value="log out" onClick={logout} /></div> */}
+                                    {/* <a href="/#/"><input type="button" value="log out" onClick={logout}/></a> */}
+
 
                                         {/* <p className="navText" id="income" onClick={(e) => { active5(); showIncome() }}>INCOME</p> */}
                                        
@@ -264,43 +279,43 @@ function MusicianDashboard() {
 
                 <ReactBootStrap.Container className="dashboardContainer" id="profilePage">
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row>
                         <ReactBootStrap.Col>
-                            <h2>Account Settings</h2>
-                            <h6 className="lineText">ACCOUNT PREFERENCES</h6>
+                            <h2 style={{textAlign:"center"}}>Account Settings</h2>
+                            <h6 className="lineText" style={{textAlign:"left"}}>ACCOUNT PREFERENCES</h6>
                             <hr className="line" />
                         </ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">First Name: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.firstName} onChange={(e) => { firstName = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Last Name: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.lastName} onChange={(e) => { lastName = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Phone: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.phone} onChange={(e) => { phone = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Email: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.email} onChange={(e) => { email = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Address: </p>
                         </ReactBootStrap.Col>
@@ -308,28 +323,28 @@ function MusicianDashboard() {
 
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center" style={{ marginTop: "10px" }}>
-                        <ReactBootStrap.Col>
-                            <h6 className="lineText">MUSICAL PREFERENCES</h6>
+                    <ReactBootStrap.Row style={{ marginTop: "10px" }}>
+                        <ReactBootStrap.Col style={{textAlign:"left"}}>
+                            <h6 className="lineText" >MUSICAL PREFERENCES</h6>
                             <hr className="line" />
                         </ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Training: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.training} onChange={(e) => { training = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Style: </p>
                         </ReactBootStrap.Col>
                         <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.style} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
-                    <ReactBootStrap.Row className="justify-content-md-center">
+                    <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Solo/Duo: </p>
                         </ReactBootStrap.Col>
@@ -337,8 +352,8 @@ function MusicianDashboard() {
                     </ReactBootStrap.Row>
 
                     <ReactBootStrap.Row className="justify-button">
-                        {/* <input type="button" onClick={updateMusician} value="Save Changes"/> */}
-                        <ReactBootStrap.Button variant="primary"  size="md" onClick={updateMusician}>Save Changes</ReactBootStrap.Button>
+                        <input type="button" onClick={updateMusician} value="Save Changes" className="musician_dash_button"/>
+                        {/* <ReactBootStrap.Button variant="primary"  size="md" onClick={updateMusician}>Save Changes</ReactBootStrap.Button> */}
                         </ReactBootStrap.Row>
 
 
@@ -352,6 +367,9 @@ function MusicianDashboard() {
                         let box = index;
                         let t = index + 'x';
                         let r = index + 'y';
+
+                        let acceptComment = "comment"+index;
+                        let acceptButton = "accept"+index;
                         return <div className="orders" id= {box}><div  className="justify-content-md-center">
                             <h5 id ='maps'><strong>{value.firstName} {value.lastName}</strong></h5>
                             <h6 className='title'>Address: </h6><h6 className='content'>{value.address}, {value.city}, {value.zip}</h6> 
@@ -359,17 +377,22 @@ function MusicianDashboard() {
                             {/* <h6 className='title'>Time: </h6><h7 className='content'> {value.time_service}</h7> */}
                             <div>
                             {/* <input type="button" value="Accept" className='accept'/><input type="button" value="Decline" className='decline'  onClick={()=>show(t,r)} />    */}
-                           <ReactBootStrap.Button variant = 'primary' size='md' className='accept' onClick={() => {updateStatus(value.id, value.email)}}>Accept</ReactBootStrap.Button>
-                           <ReactBootStrap.Button variant = 'danger'size="md" className='decline' onClick={()=>show(t,r)} >Decline</ReactBootStrap.Button>
-                           <ReactBootStrap.Button variant = 'success' size='md' href={addressURL} className='mapsButton'>Maps</ReactBootStrap.Button>
+                           {/* <ReactBootStrap.Button variant = 'success' size='md' className='accept' onClick={() => {updateStatus(value.id, value.email)}}>Accept</ReactBootStrap.Button> */}
+                           <ReactBootStrap.Button variant = 'success' size='md' className='accept' onClick={() => {show(acceptComment, acceptButton); t = acceptComment; r = acceptButton}}>Accept</ReactBootStrap.Button>
+                           <ReactBootStrap.Button variant = 'danger' size="md" className='decline' onClick={()=> {show(t,r); acceptComment = t; acceptButton = r}} >Decline</ReactBootStrap.Button>
+                           <ReactBootStrap.Button variant = 'primary' size='md' href={addressURL} className='mapsButton'>Maps</ReactBootStrap.Button>
                             {/* <a href={addressURL}><input type="button" value="Google Maps" className='mapsButton' /></a> */}
                            </div>
                             <div >
                             <textarea rows='2' placeholder="Reason for Decline..." id={t} className="commbox" onChange={(e) => {commentBox = e.target.value}}/>
                             </div>
+                            <div >
+                            <textarea rows='2' placeholder="Comments..." id={acceptComment} className="commbox" onChange={(e) => {commentBox = e.target.value}}/>
+                            </div>
                             <div>
                             {/* <input type="button" value="submit" className='button' id={r} onClick={()=>hide(box)} /> */}
-                            <ReactBootStrap.Button variant = 'danger' size='md' className='buttonSubmit' id={r} onClick={()=>{declineMusicianOrder(value.id)}} >Submit</ReactBootStrap.Button>
+                            <ReactBootStrap.Button variant = 'success' size='md' className='buttonSubmit' id={r} onClick={()=>{declineMusicianOrder(value.id)}} >Submit</ReactBootStrap.Button>
+                            <ReactBootStrap.Button variant = 'success' size='md' className='buttonSubmit' id={acceptButton} onClick={()=>{updateStatus(value.id, value.email)}} >Submit</ReactBootStrap.Button>
 
                             </div>
                             
@@ -389,7 +412,26 @@ function MusicianDashboard() {
                     </ReactBootStrap.Row>
                     <ReactBootStrap.Row className="justify-content-md-center">
                             <div>
-                            <Scheduler />
+                            {/* <Scheduler /> */}
+                            <div className='calender'>
+
+            <ScheduleSelector
+              selection={state.schedule}
+              numDays={7}
+              minTime={9}
+              maxTime={21}
+              hourlyChunks={2}
+              startDate={new Date('Monday Nov 02 2020 00:00:00')}
+              dateFormat="ddd"
+              timeFormat='h:mma'
+              hoveredColor='none'
+              onChange={handleChange}
+              hoveredColor='#4d6b0f'
+              unselectedColor='#81A92F'
+              selectedColor='#4d6b0f'
+            />
+          </div>
+          <input type="button" value="Save Schedule" className="cal_button" style={{marginTop:"30px"}} onClick={()=>{window.location.reload();}}/>
                             </div>
                     </ReactBootStrap.Row>
                 </ReactBootStrap.Container>

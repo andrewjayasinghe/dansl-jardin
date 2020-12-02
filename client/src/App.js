@@ -13,13 +13,16 @@ import Test from "./components/Admin/Test";
 import Faq from "./components/Pages/Faq/Faq";
 import Info from "./components/Pages/Info/Info";
 import About from "./components/Pages/About/About";
+import OurMusicians from "./components/Pages/Musicians/Musicians"
+import GamesRules from "./components/Pages/GamesRules/GamesRules"
+import GreenConcerts from "./components/Pages/GreenConcerts/GreenConcerts"
 
 import Login from "./components/Login/Login";
 import Musician from "./components/Musician/MusicianRegister"
 // import Musician_Dash from "./components/Musician/Musician_Dash"
-import Musician_Dash from "./components/Musician_Dashboard/MusicianDashboard"
+// import Musician_Dash from "./components/Musician_Dashboard/MusicianDashboard"
 
-import Maps from "./components/Musician_Dash/Map"
+// import Maps from "./components/Musician_Dash/Map"
 
 import Main from "./components/Dashboard/Main"
 
@@ -41,15 +44,19 @@ class App extends Component {
 
           <Route exact path="/main" component={Main}/>
 
+          <Route path="/ourmusicians"><OurMusicians /><Footer /></Route>
+          <Route path="/gamesrules"><GamesRules /><Footer /></Route>
+          <Route path="/greenconcerts"><GreenConcerts /><Footer /></Route>
+
  
           <Route exact path="/order" component={Ordering}/>
           <Route exact path="/admin" component={Admin_Dash}/>
-          <Route path="/musician/admin" component={Musician_Dash}/>
+          {/* <Route path="/musician/admin" component={Musician_Dash}/> */}
 
           <Route exact path="/login" component={Login}/>
           <Route exact path="/test" component={Test}/>
           <Route exact path="/musician" component={Musician}/>
-          <Route path="/maps" component={Maps}/>
+          {/* <Route path="/maps" component={Maps}/> */}
 
 
         </Switch>

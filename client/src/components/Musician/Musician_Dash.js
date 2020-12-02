@@ -29,7 +29,7 @@ function Musician_Dash() {
     });
   
       useEffect(() => {
-          Axios.get("http://localhost:5000/musician/get").then((response) => {
+          Axios.get("/musician/get").then((response) => {
             setOrderList(response.data);
           });
         }, []);
