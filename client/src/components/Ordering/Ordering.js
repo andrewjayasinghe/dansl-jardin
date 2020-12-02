@@ -955,7 +955,7 @@ function editType() {
           </div>
           <div className="bg-display-test">
             <ReactBootStrap.Col onClick={(e) => { setType("suprise"); setTypeText("A surprise"); forward4(); }}>
-              <button id="trans-button-style" ><img src={pic8} className="pic" alt=""/><p>Suprise!</p></button>
+              <button id="trans-button-style" ><img src={pic8} className="pic" alt=""/><p>Surprise!</p></button>
             </ReactBootStrap.Col>
           </div>
         </ReactBootStrap.Row>
@@ -1100,7 +1100,7 @@ function editType() {
         </ReactBootStrap.Row>
 
         <Form noValidate validated={validated} onSubmit={handleSubmit8} style={{ marginLeft: '20px', marginRight: "20px", paddingTop: '10px', marginBottom: "-20px" }}>
-          <MediaQuery orientation={"landscape"}>
+          {/* <MediaQuery orientation={"landscape"}> */}
             <Form.Group controlId="formGridAddress1">
               <Form.Label>Address Line</Form.Label>
               <Form.Control required minLength="4" placeholder="1234 Main St" id="address-line-field" onChange={(e) => { setAddress(e.target.value); }} />
@@ -1108,9 +1108,9 @@ function editType() {
               <span id="addressLineReq">Address line is required!</span>
               <span id="addressLineLen">Minimum length of 4 is required!</span>
             </Form.Group>
-          </MediaQuery>
+          {/* </MediaQuery> */}
 
-          <MediaQuery orientation={"Portrait"}>
+          {/* <MediaQuery orientation={"Portrait"}>
             <Form.Group controlId="formGridAddress1" class="justify-content-md-center">
               <Form.Label class="justify-content-md-center">Address Line</Form.Label>
               <Form.Control required minLength="4" placeholder="1234 Main St" id="address-line-field" onChange={(e) => { setAddress(e.target.value); }} />
@@ -1118,7 +1118,7 @@ function editType() {
               <span id="addressLineReq">Address line is required!</span>
               <span id="addressLineLen">Minimum length of 4 is required!</span>
             </Form.Group>
-          </MediaQuery>
+          </MediaQuery> */}
 
           {/* <Form.Group controlId="formGridAddress2">
             <Form.Label>Address 2</Form.Label>
