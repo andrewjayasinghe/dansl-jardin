@@ -1124,7 +1124,6 @@ function editType() {
             <Form.Label>Address 2</Form.Label>
             <Form.Control placeholder="Apartment, studio, or floor" onChange={(e) => { setAddress2(e.target.value); }} />
           </Form.Group> */}
-          <MediaQuery orientation={"Landscape"}>
             <Form.Row>
 
               <Form.Group as={Col} controlId="formGridCity">
@@ -1154,10 +1153,9 @@ function editType() {
                 <span id="zipLen">Enter zip like V3W9N3!</span>
               </Form.Group>
             </Form.Row>
-          </MediaQuery>
 
 
-          <MediaQuery orientation={"portrait"}>
+          {/* <MediaQuery orientation={"portrait"}>
             <Form.Row class="justify-content-md-center">
               <Form.Group controlId="formGridCity">
                 <div>
@@ -1189,7 +1187,7 @@ function editType() {
                 <span id="zipLen">Enter zip like V3W9N3!</span>
               </Form.Group>
             </Form.Row>
-          </MediaQuery>
+          </MediaQuery> */}
 
           <div class="buttonAlign" style={{paddingTop:"50px", paddingBottom:"100px"}}>
             <input type="button" value="Back" className="ordering_back_button" onClick={back8}/>
