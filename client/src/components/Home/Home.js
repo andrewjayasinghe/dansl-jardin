@@ -42,23 +42,37 @@ class Home extends Component {
                 <ReactBootStrap.Row>
                         {/* <div id="main-box"> */}
 
-                        {/* <div style={{marginLeft:'auto'}}>
-                        <p id="towerText1">A saxophonist for Nadine and Yves, Jazzy atmosphere! </p>
-                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Grimentz</p></div>
-                        </div> */}
+                        <div id="left_boxes" style={{marginLeft:"auto", marginTop:"100px"}}>
+
+                        <div className="fade-in2" style={{width:"200px", marginLeft:"-20px"}}>
+                        <p id="towerText1" style={{textAlign:"right"}}>A trumpeter for <br/>30 years named Leonardo.</p>
+                        <div style={{marginTop:'-20px', textAlign:"right"}}><p id="towerText1-2">Monday 6.30 p.m. - Lausanne</p></div>
+                        </div>
+
+                        <div className="fade-in3" style={{width:"250px", marginTop:"250px", marginRight:"-50px"}}>
+                        <p id="towerText1" style={{textAlign:"right"}}>An accordionist under Aunt <br/>Jacqueline's balcony. </p>
+                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Wednesday 3:30 p.m. - Yverdon</p></div>
+                        </div>
+
+                        </div>
 
                         <div className='tower_home_pos'>
+
                         <img alt="" src={tower} className="tower-new"  />
                         </div>
 
-                        {/* <div style={{width:'350px', height:"100px"}}>
-                        <p id="towerText1">A saxophonist for Nadine and Yves, Jazzy atmosphere! </p>
-                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Grimentz</p></div>
-                        </div> */}
+                        
 
 
                         <div class="home_box_pos">
-                                <p className="mainTowerText">OFFER A MUSICIAN AT HOME TO THE PEOPLE YOU LOVE.</p><p className="mainTowerText" style={{color:'#D60B52'}}>IN LESS THAN 3 MINUTES!</p>
+
+                        <div id="right_box" className="fade-in" style={{width:'350px', height:"100px", marginLeft:"-50px"}}>
+                        <p id="towerText1">A saxophonist for Nadine and Yves, Jazzy atmosphere! </p>
+                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Grimentz</p></div>
+                        </div>
+
+                                <p className="mainTowerText">OFFER <br/>A MUSICIAN AT HOME <br/>TO THE PEOPLE YOU LOVE.</p>
+                                <p className="mainTowerText" style={{color:'#D60B52'}}>IN LESS THAN 3 MINUTES!</p>
                             <a href={process.env.PUBLIC_URL + '/#/order'}><input type="button" value="Order now" className="home_Button" /></a>
                         </div>
                         {/* </div> */}
@@ -118,17 +132,18 @@ class Home extends Component {
                         <br></br>
                         <div class="textAlign">
                             <MediaQuery orientation={"Landscape"}>
-                                <h1 class="textAlign2">DANS L'<span class="secondTowerText">JARDIN</span> , HOW DOES IT WORK?</h1>
+                                <h1 class="textAlign2">DANS L'<span class="secondTowerText">JARDIN</span>, HOW DOES IT WORK?</h1>
                             </MediaQuery>
-                            <MediaQuery orientation={"portrait"}>
-                                <h1 class="textAlign2">DANS L'<span class="secondTowerText"> JARDIN</span> , <br></br> HOW DOES IT WORK?</h1>
+
+                            <MediaQuery orientation={"Portrait"}>
+                                <h1 class="textAlign2">DANS L'<span class="secondTowerText"> JARDIN</span>, <br/>HOW DOES IT WORK?</h1>
                             </MediaQuery>
                         </div>
 
                         <ReactBootStrap.Row className="cards">
                             <ReactBootStrap.Col md={3}>
 
-                                <h1 class="textAlign2" id = 'proxima'>1</h1>
+                                <h1 class="secondsection" id = 'proxima'>1</h1>
                                 <h1 class="cardHeader" id = 'neutra'>Tell us the occasion</h1>
 
                                 <img alt="" class="card-img-top" src={firstPicture} style={{ width: "50%" }}></img>
@@ -140,7 +155,7 @@ class Home extends Component {
                             </ReactBootStrap.Col>
                             <ReactBootStrap.Col md={3}>
 
-                                <h1 class="textAlign2" id = 'proxima'>2</h1>
+                                <h1 class="secondsection" id = 'proxima'>2</h1>
                                 <h1 class="cardHeader" id = 'neutra'>Decide the music<br></br><br></br></h1>
                                 <img alt="" class="card-img-top" style={{ width: "50%" }} src={thirdPicture}></img>
                                 <p class="card-text3" id = 'neutra2'><br />You decide the style of music! In addition to this, you need to know more about it. We take care of finding the musicians available in your region on the date and time indicated.</p>
@@ -148,21 +163,37 @@ class Home extends Component {
                             </ReactBootStrap.Col>
                             <ReactBootStrap.Col md={3}>
 
-                                <h1 class="textAlign2" id = 'proxima'>3</h1>
+                                <h1 class="secondsection" id = 'proxima'>3</h1>
                                 <h1 class="cardHeader" id = 'neutra'>Pay online<br></br><br></br></h1>
                                 <img alt="" class="card-img-top" src={fourthPicture} style={{ width: "50%" }}></img>
                                 <p class="card-text3" id = 'neutra2'><br />After giving us all the necessary information , enjoy a fast and secure payment.</p>
 
                             </ReactBootStrap.Col>
+
+                            <MediaQuery orientation={"Landscape"}>
                             <ReactBootStrap.Col md={3}>
 
-                                <h1 class="textAlign2" id = 'proxima'>4</h1>
+                                <h1 class="secondsection" id = 'proxima'>4</h1>
                                 <h1 class="cardHeader" id = 'neutra'>Listen and savor<br></br><br></br></h1>
                                 <img alt="" class="card-img-top" src={secondPicture} style={{ width: "50%" }}></img>
                                 <p class="card-text3"  id = 'neutra2'><br />On the date and at the time indicated, one or two musicians will appear in front of the beneficiary's door on time and will play for 20 minutes. </p>
-                                <p class="card-text2" id = 'neutra'>Let the music begin!</p>
+                                {/* <p class="card-text2" id = 'neutra'>Let the music begin!</p> */}
 
                             </ReactBootStrap.Col>
+                            </MediaQuery>
+
+                            <MediaQuery orientation={"Portrait"}>
+                            <ReactBootStrap.Col md={3} style={{paddingBottom:"70px"}}>
+
+                                <h1 class="secondsection" id = 'proxima'>4</h1>
+                                <h1 class="cardHeader" id = 'neutra'>Listen and savor<br></br><br></br></h1>
+                                <img alt="" class="card-img-top" src={secondPicture} style={{ width: "50%" }}></img>
+                                <p class="card-text3"  id = 'neutra2'><br />On the date and at the time indicated, one or two musicians will appear in front of the beneficiary's door on time and will play for 20 minutes. </p>
+                                {/* <p class="card-text2" id = 'neutra'>Let the music begin!</p> */}
+
+                            </ReactBootStrap.Col>
+                            </MediaQuery>
+
                         </ReactBootStrap.Row>
                     </div>
                 </ReactBootStrap.Row>
@@ -185,14 +216,14 @@ class Home extends Component {
                             <ReactBootStrap.Col md={4} style={{marginBottom:'-50px'}}>
                                 <h1 class="textAlign3">PUBLIC</h1>
                                 <img alt="" class="card-img-top2" id="img2" src={committeePicture} style={{ width: "35%" , marginBottom:'20px'}}></img>
-                                <h1 class="cardHeader" id = 'neutra' style={{fontSize:"30px"}}>In a small group with</h1>
+                                <h1 class="cardHeader" id = 'neutra' style={{fontSize:"30px"}}>in a small group with</h1>
                             </ReactBootStrap.Col>
 
                             <ReactBootStrap.Col md={4}>
 
                                 <h1 class="textAlign3">PRICE</h1>
                                 <img alt="" class="card-img-top2" id="img2" src={pricePic} style={{ width: "35%" , marginBottom:'25px'}}></img>
-                                <h1 class="cardHeader" id = 'neutra' style={{fontSize:"30px"}}>One or two professional musicians</h1>
+                                <h1 class="cardHeader" id = 'neutra' style={{fontSize:"30px"}}>one or two professional musicians</h1>
 
                             </ReactBootStrap.Col>
                         </ReactBootStrap.Row>
@@ -227,7 +258,7 @@ class Home extends Component {
                         <br></br>
                         <div style={{marginTop:'30px', marginBottom:'50px'}}>
 
-                        <h1 class="textAlign2">IN THE GARDEN, IN REAL LIFE, IT GIVES THAT!</h1>
+                        <h1 class="textAlign2" style={{paddingTop:'20px', paddingBottom:'50px'}}>DANS L'JARDIN, IN REAL LIFE, IT GIVES THAT!</h1>
                         <div className="player-wrapper">
                             <MediaQuery orientation={"Landscape"}>
                                 <ReactPlayer
@@ -281,14 +312,14 @@ class Home extends Component {
                 <ReactBootStrap.Row>
                     <div className="cards3">
                         <br></br>
-                        <h1 class="textAlign2">SOME MEMORIES OF UNFORGETTABLE MOMENTS</h1>
+                        <h1 class="textAlign2" style={{paddingTop:'20px', paddingBottom:'50px'}}>SOME UNFORGETTABLE MOMENTS</h1>
                         
                         <MediaQuery orientation={"landscape"}>
 
                         
                         <ReactBootStrap.Carousel className="buttonAlign2">
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={firstPhoto}
@@ -297,7 +328,7 @@ class Home extends Component {
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={secondPhoto}
@@ -306,7 +337,7 @@ class Home extends Component {
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={thirdPhoto}
@@ -315,7 +346,7 @@ class Home extends Component {
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={fifthPhoto}
@@ -324,7 +355,7 @@ class Home extends Component {
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={sixthPhoto}
@@ -333,7 +364,7 @@ class Home extends Component {
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={seventhPhoto}
@@ -342,7 +373,7 @@ class Home extends Component {
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" >
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={eighthPhoto}
@@ -355,79 +386,79 @@ class Home extends Component {
 
                         <MediaQuery orientation={"portrait"}>
 
-                        <ReactBootStrap.Carousel className="buttonAlign2" style={{height: "400px"}}>
+                        <ReactBootStrap.Carousel className="buttonAlign2" >
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '400px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={firstPhoto}
                                         alt="First slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
 
                                     />
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '400px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={secondPhoto}
                                         alt="Third slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
 
                                     />
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '400px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={thirdPhoto}
                                         alt="Third slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
 
                                     />
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '400px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={fifthPhoto}
                                         alt="Fourth slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
 
                                     />
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '400px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={sixthPhoto}
                                         alt="Fifth slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
                                     />
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '400px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={seventhPhoto}
                                         alt="Sixth slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
 
                                     />
                                 </div>
                             </ReactBootStrap.Carousel.Item>
                             <ReactBootStrap.Carousel.Item interval={1000}>
-                                <div className="carouseImageContainer" style={{ height: '500px' }}>
+                                <div className="carouseImageContainer" style={{padding: "20px"}}>
                                     <img
                                         className="carouselImage d-block w-100"
                                         src={eighthPhoto}
                                         alt="Seventh slide"
-                                        style={{height: "400px"}}
+                                        // style={{height: "400px"}}
 
                                     />
                                 </div>
@@ -442,7 +473,7 @@ class Home extends Component {
                     <div className="cards3">
                         <br></br>
                         <br></br>
-                        <h1 class="textAlign2">FOLLOW US ON SOCIAL MEDIA</h1>
+                        <h1 class="textAlign2">FOLLOW US ON SOCIAL MEDIAS</h1>
                         <a href="https://www.facebook.com/dansljardin" target="_blank" rel="noopener noreferrer">
                             <img alt="" src={facebookLogo} className="logo" />
                         </a>
@@ -457,7 +488,7 @@ class Home extends Component {
                     <div className="cards3">
                 <br></br>
 
-                    {/* <Feed userName="dans_l_jardin" className="Feed" classNameLoading="Loading"/> */}
+                    <Feed userName="dans_l_jardin" className="Feed" classNameLoading="Loading"/>
                 </div>
                 </ReactBootStrap.Row>
 

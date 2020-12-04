@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import "./GamesRules.css"
 
 import firstPhoto from "./../../../assets/logos/arrow.png"
 
-class GamesRules extends Component {
+function GamesRules() {
 
-    render() {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
      
         return (
             <ReactBootStrap.Container className="top-space" style={{marginBottom:'200px'}}>
@@ -31,15 +32,11 @@ class GamesRules extends Component {
             
             
             </ul>
-            <a href="/#/info">
-            <img src={firstPhoto} className="arrow"></img>
-            </a>
                 </div>
             </ReactBootStrap.Container>
 
 
         )
-    };
 };
 
 export default GamesRules

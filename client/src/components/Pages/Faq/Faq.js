@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import { useMediaQuery } from 'react-responsive'
 import "./Faq.css"
 
 import firstPhoto from "./../../../assets/logos/arrow.png"
 
-class Faq extends Component {
+function Faq() {
 
-    render() {
-        
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
         return (
             <ReactBootStrap.Container className="top-space">
             <div className="faq-display">
@@ -126,9 +128,7 @@ class Faq extends Component {
                 
                 Do not hesitate to contact us at <i id="low">info@dansljardin.ch</i> ,
                 in addition to answering you, your question may be useful to us in order to complete this list.</p>
-                <a href="/#/info">
-            <img src={firstPhoto} className="arrow"></img>
-            </a>
+
                        </ReactBootStrap.Col>
                        </ReactBootStrap.Col>
                        </ReactBootStrap.Row>
@@ -140,7 +140,6 @@ class Faq extends Component {
             </ReactBootStrap.Container>
 
         )
-    };
 };
 
 export default Faq

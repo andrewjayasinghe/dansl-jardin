@@ -3,13 +3,15 @@
 }
 
 .tower_home_pos {
-    margin-left: auto;
+    /* margin-left: auto; */
 }
 
 #main-box {
     margin-left: auto;
     margin-right: auto;
 }
+
+
 
 .mainTowerText {
     font-family: CamperSans2;
@@ -19,13 +21,15 @@
     margin-right: auto;
     letter-spacing: 2px;
 }
+@media only screen and (orientation:landscape){
 
 .home_box_pos {
-    width:450px;
+     width: 550px;
      margin-right:auto; 
      padding-left:80px;
      margin-top:auto;
      margin-bottom:auto;
+}
 }
 
 #towerText1 {
@@ -83,6 +87,9 @@
         margin-right: auto;
         margin-left: auto;
     }
+    #left_boxes, #right_box {
+        display: none;
+    }
     .tower_home_pos {
         margin-left: auto;
         margin-right: auto;
@@ -110,12 +117,13 @@
         margin-bottom: 40px;
     }
     .home_box_pos {
-        width:350px;
-         margin-right:auto;
-         margin-left:auto; 
+        width:550px;
+         /* margin-right:auto; */
+         /* margin-left:auto;  */
          /* padding-left:40px; */
          margin-top:40px;
          margin-bottom:auto;
+         padding-left:70px;
     }
 }
 
@@ -281,6 +289,16 @@
     width: 50%;
 }
 
+.secondsection {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: CamperSans2;
+    font-size: 70px;
+    letter-spacing: 0.04em;
+}
+
 
 
 
@@ -316,6 +334,16 @@
     .b{
         display: none;
     }
+    .secondsection {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        font-family: CamperSans2;
+        font-size: 70px;
+        letter-spacing: 0.04em;
+        margin-top: 40px;
+    }
 
 
 
@@ -338,8 +366,8 @@
     margin-right: auto;
     color: white;
     font-family: CamperSans2;
-    font-size: 90px;
-    letter-spacing: 2px;
+    font-size: 70px;
+    letter-spacing: 0.04em;
 }
 
 .textAlign3 {
@@ -356,7 +384,10 @@
     font-family: NeutraLight;
     src: url(./../../assets/fonts/NeutraTextDemi.otf);
 }
-
+/* @font-face {
+    font-family: NeutraLight;
+    src: url(./../../assets/fonts/);
+} */
 /* .carouseImageContainer {
     width: 500px;
 } */
@@ -368,6 +399,7 @@
     height: 100px;
     color: white;
     font-family: NeutraLight;
+    letter-spacing: 0.04em;
 }
 
 .card-img-top {
@@ -381,8 +413,8 @@
 }
 
 .buttonAlign2 {
-    /* max-height: 20%x; */
-    max-width: 1000px;
+    max-height: 500px;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -416,8 +448,9 @@ a+a {
 
 .card-text3 {
     text-align: center;
-    /* font-size: 30px; */
+    font-size: 17px;
     color: #ececec;
+    font-family: TextBook;
 }
 
 .card-text4 {
@@ -564,9 +597,10 @@ a+a {
     bottom: 20%;
 }
 .carouselImageContainer {
-    width: 200px;
+    width: 100%;
     /* height: 500px; */
 }
+
 
 @media only screen and (orientation: portrait) {
     .textAlign3 {
@@ -662,10 +696,10 @@ a+a {
         font-size: 25px;
     }
 
-    .textAlign2 {
+    /* .textAlign2 {
         font-size: 70px;
         line-height: 80%;
-    }
+    } */
     
     .cards2 {
         margin-top: 10%;
@@ -715,8 +749,59 @@ a+a {
     color: white;
 }
 
-#neutra2{
+/* #neutra2{
     font-size: 1.1rem;
     font-family: NeutraLight;
     color: white;
-}
+} */
+
+.fade-in {
+    animation: 3s ease 0s normal forwards 1 fadeIn;
+    -webkit-animation: 3s ease 0s normal forwards 1 fadeIn;
+    -moz-animation: 3s ease 0s normal forwards 1 fadeIn;
+    -o-animation: 3s ease 0s normal forwards 1 fadeIn;
+    -ms-animation: 3s ease 0s normal forwards 1 fadeIn;
+    float: left;
+    padding-top: 1%;
+  }
+    @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    .fade-in2 {
+        animation: 6s ease 0s normal forwards 1 fadeIn;
+        -webkit-animation: 6s ease 0s normal forwards 1 fadeIn;
+        -moz-animation: 6s ease 0s normal forwards 1 fadeIn;
+        -o-animation:6s ease 0s normal forwards 1 fadeIn;
+        -ms-animation: 6s ease 0s normal forwards 1 fadeIn;
+    }
+
+    .fade-in3 {
+        animation: 9s ease 0s normal forwards 1 fadeIn;
+        -webkit-animation: 9s ease 0s normal forwards 1 fadeIn;
+        -moz-animation: 9s ease 0s normal forwards 1 fadeIn;
+        -o-animation: 9s ease 0s normal forwards 1 fadeIn;
+        -ms-animation: 9s ease 0s normal forwards 1 fadeIn;
+
+    }

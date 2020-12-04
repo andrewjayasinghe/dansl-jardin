@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import "./Info.css"
-
+import "./../../Navbar/Navbar.css"
 class Info extends Component {
 
     render() {
+
+        function active1(){
+            document.getElementById("about").style.color = "red";
+            document.getElementById("home").style.color = "white";
+            document.getElementById("faq").style.color = "white";
+            document.getElementById("info").style.color = "white";
+        }
+
+        function active2(){
+            document.getElementById("about").style.color = "white";
+            document.getElementById("home").style.color = "white";
+            document.getElementById("faq").style.color = "red";
+            document.getElementById("info").style.color = "white";
+        }
+        function non_active(){
+            document.getElementById("about").style.color = "white";
+            document.getElementById("home").style.color = "white";
+            document.getElementById("faq").style.color = "white";
+            document.getElementById("info").style.color = "white";
+        }
 
      
         return (
@@ -21,10 +41,10 @@ class Info extends Component {
 
                 <div className="infobox1">
                 <ReactBootStrap.Col><p class='title'>About In The Garden</p>
-                <p class='size'>The platform  in the Garden  was created by Klangbox on May 1, 2020 with the aim of brightening up the daily lives of people ...</p>
+                <p class='size'>The platform  in the Garden  was created by Klangbox on May 1, 2020 with the aim of brightening up the daily lives of people</p>
                 
                 <a href="/#/about">
-                <button className="button1">
+                <button className="button1" onClick={active1}>
                 Learn More
                 </button>
                 </a>
@@ -37,16 +57,19 @@ class Info extends Component {
                 
                 <div className="infobox1_2">
                 <ReactBootStrap.Col>
-                <p class='title'>Our Musicians</p><br/>
+                    <div style={{width:"250px"}}>
+                <p class='title'>Our Musicians</p>
                 <p class='size'>100% musiquality!</p>
 
-   
-                <br/><br/><br/>
+                <div style={{marginTop:"auto"}}>
+                    <br/><br/>
                 <a href="/#/ourmusicians">
-                <button class="button1" herf="/#/ourmusicians">
+                <button class="button1" herf="/#/ourmusicians" onClick={non_active}>
                 Learn More
                 </button>
                 </a>
+                </div>
+                </div>
 
                 </ReactBootStrap.Col>
                 </div>
@@ -64,7 +87,7 @@ class Info extends Component {
                     <p class='size'>Some little information so that everything goes well during a musical performance in the Garden.</p>
                
                     <a href="/#/gamesrules">
-                    <button className="button2" href="/#/gamesrules">
+                    <button className="button2" href="/#/gamesrules" onClick={non_active}>
                         Learn More
                     </button>
                     </a>
@@ -76,9 +99,10 @@ class Info extends Component {
                 <div className="infobox2" style={{marginRight:"auto"}}>
                 <ReactBootStrap.Col>
                     <p class='title'>FAQ</p>
-                    <p class='size'>Looking for useful information? Find out what our clients ask us most frequently</p>
+                    <p class='size'>Looking for useful information? Find out what our clients ask us most frequently.</p>
+                    <br/><br/>
                     <a href="/#/faq">
-                    <button className="button2" href="/#/faq">
+                    <button className="button2" href="/#/faq" onClick={active2}>
                         Learn More
                     </button>
                     </a>
@@ -92,12 +116,11 @@ class Info extends Component {
                 <div className="infobox3" style={{marginLeft:"auto"}}>
                 <ReactBootStrap.Col>
                     <p class='title'>"Green" CONCERTS</p>
-                    <p class='size'>After the "slow food", here is the "slow music" !</p>
-                    <br/>
-                    <br/>
+                    <p class='size'>After the "slow food", here is the "slow music" !</p><br/><br/>
+  
 
-                    <a href="/#/gamesrules">
-                    <button className="button3" href="/#/gamesrules">
+                    <a href="/#/greenconcerts">
+                    <button className="button3" href="/#/gamesrules" onClick={non_active}>
                         Learn More
                     </button>
                     </a>
@@ -108,11 +131,11 @@ class Info extends Component {
 
                 <div className="infobox3" style={{marginRight:"auto"}}>
                 <ReactBootStrap.Col>
-                    <p class='title'>WE ARE TALKING ABOUT IT!</p>
+                    <p class='title' style={{fontSize:"48px"}}>WE ARE TALKING ABOUT IT!</p>
                     <p class='size'>TVs, radios, newspapers ... <br/>Our interventions on the media. </p>
-                    <br/>
-                    <a href="/#/faq">
-                    <button className="button3" href="/#/faq">
+                    <br/><br/>
+                    <a href="/#/about">
+                    <button className="button3" onClick={active1}>
                         Learn More
                     </button>
                     </a>

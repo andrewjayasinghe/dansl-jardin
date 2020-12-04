@@ -32,15 +32,17 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
   render() {
     return (
+
       <Router>
+
         <Navbar />
         <Switch>
 
 
           <Route exact path="/"><Home /><Footer /></Route>
           <Route path="/faq"><Faq /><Footer /></Route>
-          <Route path="/info"><Info /><Footer /></Route>
           <Route path="/about"><About /><Footer /></Route>
+          <Route path="/info"><Info /><Footer /></Route> 
 
           <Route exact path="/main" component={Main}/>
 
@@ -61,6 +63,7 @@ class App extends Component {
 
         </Switch>
       </Router>
+
     );
   }
 }

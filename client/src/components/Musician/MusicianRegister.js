@@ -10,6 +10,9 @@ import "mdbreact/dist/css/mdb.css";
 // set the date variables that will be used to send the calander details into the database.#####  
 
 function MusicianRegister() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
   const [state, setSchedule] = useState({});
@@ -158,6 +161,35 @@ function MusicianRegister() {
   const [media, setMedia] = useState("");
 
 
+  if (email.length >= 1) {
+    document.getElementById("mus_emailValid").style.display = "block";
+    if (email.includes("@") && email.length > 5 && (email.includes(".ca") || email.includes(".net") || email.includes(".org") || email.includes(".com"))) {
+      document.getElementById("mus_emailValid").innerHTML = "Looks good";
+    } else {
+      document.getElementById("mus_emailValid").innerHTML = "Enter valid email";
+    }
+  }
+  
+
+  if (password.length >= 1) {
+    document.getElementById("mus_passLen").style.display = "block";
+    if (password.length >= 8) {
+      document.getElementById("mus_passLen").innerHTML = "Looks good";
+    } else {
+      document.getElementById("mus_passLen").innerHTML = "Password must be 8 characters long";
+    }
+  }
+  
+  if (confirmpassword.length >= 1) {
+    document.getElementById("mus_passMatch").style.display = "block";
+    if (password === confirmpassword) {
+      document.getElementById("mus_passMatch").innerHTML = "Looks good";
+    } else {
+      document.getElementById("mus_passMatch").innerHTML = "Password does not match";
+    }
+  }
+  
+
   // ######## This function sends all the variables when the user clicks
   //  the submit button, into the server.js file #####  
 
@@ -200,6 +232,7 @@ function MusicianRegister() {
     }).then((response) => {
       console.log(response);
     });
+    alert("Account succesfully registered")
     window.location.reload();
   };
 
@@ -208,15 +241,63 @@ function MusicianRegister() {
       <div className='display-reg'>
         <ReactBootStrap.Row className="justify-content-md-center">
           <ReactBootStrap.Col>
-            <h1 class="info">Musician Register</h1>
+            <h1 className="musicianregTitle">Musician Register</h1>
           </ReactBootStrap.Col>
         </ReactBootStrap.Row>
 
-        {/* ########## (PERSONAL INFORMATION) ########## */}
+
+        
+
+        
         <ReactBootStrap.Form>
           <ReactBootStrap.Container>
             <ReactBootStrap.Row>
               <ReactBootStrap.Col md={{ span: 8, offset: 2 }}>
+
+                {/* ########## (USER ACOUNT INFORMATION) ########## */}
+
+                  <ReactBootStrap.Form.Group style={{marginBottom:"15px"}}>
+                  <ReactBootStrap.Form.Label id="font" style={{marginTop:"0px"}}>
+                    Account Information
+                  </ReactBootStrap.Form.Label>
+                  {/* <h4>Create an account to recieve and view orders. Login with email and password.</h4> */}
+
+                  <ReactBootStrap.Form.Control
+                    type="text"
+                    placeholder="E-mail"
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
+                  {/* <span>Looks Good!</span> */}
+                  <span id="mus_emailValid" style={{color:"white"}}>Enter valid email</span>
+
+                </ReactBootStrap.Form.Group>
+
+                <ReactBootStrap.Form.Group>
+                  <ReactBootStrap.Form.Control
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                  <span id="mus_passLen" style={{color:"white"}}>Password must be 8 characters long</span>
+                </ReactBootStrap.Form.Group>
+
+                <ReactBootStrap.Form.Group controlId="formGridlname">
+                  <ReactBootStrap.Form.Control
+                    type="password"
+                    placeholder="Confirm Password"
+                    onChange={(e) => {
+                      setConfirmPassword(e.target.value);
+                    }}
+                  />
+                  <span id="mus_passMatch" style={{color:"white"}}>Password does not match</span>
+                </ReactBootStrap.Form.Group>
+
+
+                {/* ########## (PERSONAL INFORMATION) ########## */}
                 <ReactBootStrap.Form.Group controlId="formGridfname">
                   <ReactBootStrap.Form.Label id="font">
                     Personal Information
@@ -313,40 +394,7 @@ function MusicianRegister() {
                   />
                 </ReactBootStrap.Form.Group>
 
-                {/* ########## (USER ACOUNT INFORMATION) ########## */}
-
-                <ReactBootStrap.Form.Group>
-                  <ReactBootStrap.Form.Label id="font">
-                    Account Information
-                  </ReactBootStrap.Form.Label>
-                  <ReactBootStrap.Form.Control
-                    type="text"
-                    placeholder="E-mail"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                  />
-                </ReactBootStrap.Form.Group>
-
-                <ReactBootStrap.Form.Group>
-                  <ReactBootStrap.Form.Control
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                  />
-                </ReactBootStrap.Form.Group>
-
-                <ReactBootStrap.Form.Group controlId="formGridlname">
-                  <ReactBootStrap.Form.Control
-                    type="password"
-                    placeholder="Confirm Password"
-                    onChange={(e) => {
-                      setConfirmPassword(e.target.value);
-                    }}
-                  />
-                </ReactBootStrap.Form.Group>
+                
 
                 {/* ########## (MUSICAL TRAINING) ########## */}
 
@@ -725,7 +773,7 @@ function MusicianRegister() {
 
                 </ReactBootStrap.Container>
 
-                <ReactBootStrap.Form.Group style={{ marginBottom: "1px" }}>
+                <ReactBootStrap.Form.Group style={{ marginBottom: "1px", marginTop:"50px"}}>
                   <ReactBootStrap.Form.Label>
                     <i>Music Styles</i>
                   </ReactBootStrap.Form.Label>
@@ -800,7 +848,7 @@ function MusicianRegister() {
                 </ReactBootStrap.Container>
 
                 <ReactBootStrap.Container>
-                  <ReactBootStrap.Form.Group >
+                  <ReactBootStrap.Form.Group style={{marginTop:"20px"}}>
                     <ReactBootStrap.Form.Label>
                       Popular Styles
                       </ReactBootStrap.Form.Label>
@@ -1128,8 +1176,7 @@ function MusicianRegister() {
 
 
                 <ReactBootStrap.Form.Group
-                  style={{ marginTop: "15px" }}
-                >
+                  style={{marginTop:"50px"}}>
                   <ReactBootStrap.Form.Label>
                     <i>You Play In?</i>
                   </ReactBootStrap.Form.Label>
@@ -1168,7 +1215,7 @@ function MusicianRegister() {
                   </ReactBootStrap.Col>
                 </ReactBootStrap.Row>
 
-                <ReactBootStrap.Form.Group>
+                <ReactBootStrap.Form.Group style={{marginTop:"50px"}}>
                   <ReactBootStrap.Form.Label>
                     <i>Media</i>
                   </ReactBootStrap.Form.Label>

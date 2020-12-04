@@ -71,6 +71,8 @@
     border-style: solid;
     color: white;
     margin-right:5px;
+    letter-spacing: 0.09rem;
+
   }
   .ordering_next_button {
     background-color: #2B8984;
@@ -81,6 +83,7 @@
     width: 150px;
     border-style: solid;
     color: white;
+    letter-spacing: 0.09rem;
   }
 }
 @media only screen and (orientation:landscape) {
@@ -94,6 +97,7 @@
     border-style: solid;
     color: white;
     margin-right:15px;
+    letter-spacing: 0.09rem;
   }
   .ordering_next_button {
     background-color: #2B8984;
@@ -104,6 +108,7 @@
     width: 150px;
     border-style: solid;
     color: white;
+    letter-spacing: 0.09rem;
   }
 }
 
@@ -244,11 +249,11 @@ h3 {
   }
   #fNameLabelReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #fNameLabelLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #fNameLabelEditOK {
@@ -257,11 +262,11 @@ h3 {
   }
   #fNameLabelEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(233, 220, 37);
   }
   #fNameLabelEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   
   #lNameLabelOK {
@@ -270,11 +275,11 @@ h3 {
   }
   #lNameLabelReq {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   #lNameLabelLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #lNameLabelEditOK {
@@ -283,11 +288,11 @@ h3 {
   }
   #lNameLabelEditReq {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   #lNameLabelEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #occasionOK {
@@ -297,12 +302,12 @@ h3 {
   }
   #occasionReq {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
     text-align : center;
   }
   #occasionLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
     text-align : center;
   }
 
@@ -313,12 +318,12 @@ h3 {
   }
   #occasionEditReq {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
     text-align : center;
   }
   #occasionEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
     text-align : center;
   }
   #order3 {
@@ -340,7 +345,7 @@ h3 {
   }
   #date-timeReq {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
     text-align : center;
   }
 
@@ -351,7 +356,7 @@ h3 {
   }
   #date-timeEditReq {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
     text-align : center;
   }
   #order7 {
@@ -367,11 +372,11 @@ h3 {
   }
   #addressLineReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #addressLineLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #addressLineEditOK {
@@ -380,11 +385,11 @@ h3 {
   }
   #addressLineEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #addressLineEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #cityOK {
@@ -393,11 +398,11 @@ h3 {
   }
   #cityReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #cityLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #cityEditOK {
@@ -406,11 +411,11 @@ h3 {
   }
   #cityEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #cityEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #stateOK {
@@ -419,7 +424,7 @@ h3 {
   }
   #stateReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
 
   #stateEditOK {
@@ -428,7 +433,7 @@ h3 {
   }
   #stateEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
 
   #zipOK {
@@ -437,11 +442,11 @@ h3 {
   }
   #zipReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #zipLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #zipEditOK {
@@ -450,11 +455,11 @@ h3 {
   }
   #zipEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #zipEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #order9 {
@@ -466,11 +471,11 @@ h3 {
   }
   #offeredByReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #offeredByLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #offeredByEditOK {
@@ -479,11 +484,11 @@ h3 {
   }
   #offeredByEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #offeredByEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   #phoneNumberOK {
     display: none;
@@ -491,15 +496,15 @@ h3 {
   }
   #phoneNumberReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #phoneNumberLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   #phoneNumberNums{
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
 
   #phoneNumberEditOK {
@@ -508,15 +513,15 @@ h3 {
   }
   #phoneNumberEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #phoneNumberEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   #phoneNumberEditNums{
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #emailOK {
     display: none;
@@ -524,11 +529,11 @@ h3 {
   }
   #emailReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #emailLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
 
   #emailEditOK {
@@ -537,11 +542,11 @@ h3 {
   }
   #emailEditReq {
     display: none;
-    color: rgb(255, 103, 103);
+    color: rgb(245, 244, 244);
   }
   #emailEditLen {
     display: none;
-    color:  rgb(255, 103, 103);
+    color:  rgb(245, 244, 244);
   }
   #order10 {
     display: none;

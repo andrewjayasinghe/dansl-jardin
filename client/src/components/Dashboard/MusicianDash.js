@@ -380,7 +380,7 @@ function MusicianDashboard() {
                            {/* <ReactBootStrap.Button variant = 'success' size='md' className='accept' onClick={() => {updateStatus(value.id, value.email)}}>Accept</ReactBootStrap.Button> */}
                            <ReactBootStrap.Button variant = 'success' size='md' className='accept' onClick={() => {show(acceptComment, acceptButton); t = acceptComment; r = acceptButton}}>Accept</ReactBootStrap.Button>
                            <ReactBootStrap.Button variant = 'danger' size="md" className='decline' onClick={()=> {show(t,r); acceptComment = t; acceptButton = r}} >Decline</ReactBootStrap.Button>
-                           <ReactBootStrap.Button variant = 'primary' size='md' href={addressURL} className='mapsButton'>Maps</ReactBootStrap.Button>
+                           <ReactBootStrap.Button variant = 'primary' size='md' className='mapsButton' onClick={()=>{window.open(addressURL)}}>Maps</ReactBootStrap.Button>
                             {/* <a href={addressURL}><input type="button" value="Google Maps" className='mapsButton' /></a> */}
                            </div>
                             <div >

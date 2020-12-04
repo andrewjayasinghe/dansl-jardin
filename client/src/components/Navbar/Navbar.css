@@ -10,7 +10,7 @@
 
 }
 .nav-text {
-    font-size: 30px;
+    font-size: 20px;
     /* font-family: Roboto; */
     font-style: normal;
     font-weight: bold;
@@ -20,16 +20,17 @@
 }
 .nav-font {
     color: rgb(158, 40, 40);
-    font-size: 30px;
+    /* font-size: 20px; */
     /* font-family: Roboto; */
     /* font-style: normal; */
     /* font-weight: bold; */
-    font-size: 50px;
+    font-size: 25px;
     line-height: 35px;
     /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     margin-top: 7px;
-    font-family: CamperSans2;
+    font-family: TextBook;
     margin-right: 15px;
+    text-shadow: none;
 
 }
 
@@ -37,6 +38,7 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
      box-shadow: none;
+     text-shadow: none;
 }
 
 .nav-font:hover {
@@ -48,11 +50,10 @@
 @media only screen and (orientation:portrait){
     .nav-font {
         color: #D60B52;
-        font-size: 30px;
-        font-size: 50px;
+        font-size: 20px;
         line-height: 35px;
         margin-top: 7px;
-        font-family: CamperSans2;
+        font-family: TextBook;
   }
   .nav-font {
     margin-left: 20px;
@@ -81,5 +82,9 @@
 
 #home {
     color: red;
+}
+
+#faq, #info, #about {
+    color: white;
 }
 

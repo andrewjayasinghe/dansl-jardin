@@ -49,12 +49,12 @@ class Navbar extends Component {
             <div id="logo-href">
 <a href={process.env.PUBLIC_URL + '/#/'} onClick={active}><img src={main_logo2} id="logo-nav" alt="main-logo" /></a>
 </div>
-  <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+  <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" style={{textShadow: "none"}}>
 
-  <ReactBootStrap.Nav className="mr-auto">
+  <ReactBootStrap.Nav className="mr-auto" style={{textShadow: "none"}}>
 
 </ReactBootStrap.Nav>
-    <ReactBootStrap.Nav className='nav-size'> 
+    <ReactBootStrap.Nav className='nav-size' style={{textShadow: "none"}}>
       
     {/* <ReactBootStrap.Nav.Link href="/" className="nav-text">HOME</ReactBootStrap.Nav.Link>
       <ReactBootStrap.Nav.Link href="/faq" className="nav-text">FAQ</ReactBootStrap.Nav.Link>

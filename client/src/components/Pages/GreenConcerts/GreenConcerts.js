@@ -10,7 +10,7 @@ class GreenConcerts extends Component {
 
      
         return (
-            <ReactBootStrap.Container className="top-space" style={{marginBottom:'200px'}}>
+            <ReactBootStrap.Container className="top-space" style={{paddingBottom:'200px'}}>
              <div className="info-display">
              <ReactBootStrap.Row>
              <ReactBootStrap.Col><h1 className="info33"><span class="thirdTowerText">GREEN</span> CONCERTS</h1>
@@ -23,9 +23,6 @@ class GreenConcerts extends Component {
 
 <br></br>It is easy to do for the cities, but it is important to us to have the possibility of offering music in the countryside and more isolated places. <br></br>That is why we are always looking for musicians living outside the cities. </p>
 
-            <a href="/#/info">
-            <img src={firstPhoto} className="arrow"></img>
-            </a>
 
                 </div>
                
