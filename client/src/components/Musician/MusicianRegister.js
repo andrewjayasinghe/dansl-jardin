@@ -277,7 +277,7 @@ function MusicianRegister() {
                 <ReactBootStrap.Form.Group>
                   <ReactBootStrap.Form.Control
                     type="password"
-                    placeholder="Password"
+                    placeholder="Create Password"
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}

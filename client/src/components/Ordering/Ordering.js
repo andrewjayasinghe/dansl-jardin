@@ -228,7 +228,7 @@ function Ordering() {
     }).then(() => {
       console.log("sucessful insert");
     })
-    alert("Sucesfully created order, email has been sent.");
+    // alert("Sucesfully created order, email has been sent.");
   };
 
 
@@ -529,16 +529,15 @@ function Ordering() {
           break;
       }
   }
-    document.getElementById("date-time-fieldEdit").value= dateService + "T" + timeService
-    document.getElementById("address-line-fieldEdit").value = address
-    document.getElementById("cityEdit").value = city
-    let stateField = document.getElementById("stateEdit")
-    for (let i = 0; i < stateField.options.length; i++) {
-      if (stateField.options[i].text=== state) {
-          stateField.options[i].selected = true;
-          break;
-      }
-  }
+  document.getElementById("date-time-fieldEdit").value= dateService + "T" + timeService
+  document.getElementById("address-line-fieldEdit").value = address
+  let cityField = document.getElementById("cityEdit")
+  for (let i = 0; i < cityField.options.length; i++) {
+    if (cityField.options[i].text=== city) {
+        cityField.options[i].selected = true;
+        break;
+    }
+}
     document.getElementById("zipEdit").value = zip
     document.getElementById("offered-fieldEdit").value = offered
     document.getElementById("phoneEdit").value = number
@@ -1127,12 +1126,23 @@ function editType() {
           </Form.Group> */}
             <Form.Row>
 
-              <Form.Group as={Col} controlId="formGridCity">
+            <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>City</Form.Label>
-                <Form.Control required minLength="3" placeholder="Burnaby" onChange={(e) => { setCity(e.target.value); }} />
-                <span id="cityOK">Looks Good!</span>
-                <span id="cityReq">City is required!</span>
-                <span id="cityLen"></span>
+                <Form.Control required as="select" defaultValue="Choose..." onChange={(e) => { setCity(e.target.value); }}>
+                  <option value="">Choose from below</option>
+                  <option value="Vancouver">Vancouver</option>
+                  <option value="Surrey">Surrey</option>
+                  <option value="Burnaby">Burnaby</option>
+                  <option value="New Westminster">New Westminster</option>
+                  <option value="Port Coquitlam">Port Coquitlam</option>
+                  <option value="North Vancouver">North Vancouver</option>
+                  <option value="Langley">Langley</option>
+                  <option value="Delta">Delta</option>
+                  <option value="Richmond">Richmond</option>
+                  <span id="cityOK">Looks Good!</span>
+                  <span id="cityReq">City is required!</span>
+                  <span id="cityLen"></span>
+                  </Form.Control>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
@@ -1140,7 +1150,6 @@ function editType() {
                 <Form.Control required as="select" minLength="3" defaultValue="Choose..." onChange={(e) => { setState(e.target.value); }}>
                   <option value="">Choose from below</option>
                   <option value="British Columbia">British Columbia</option>
-                  {/* <option value="Alberta">Alberta</option> */}
                 </Form.Control>
                 <span id="stateOK">Looks Good!</span>
                 <span id="stateReq">State is required!</span>
@@ -1697,10 +1706,21 @@ function editType() {
               <ReactBootStrap.Col md="auto">
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridCity">
-                    <Form.Control required minLength="3" placeholder="Burnaby" id="cityEdit" onChange={(e) => { setCity(e.target.value); }} />
-                    <span id="cityEditOK">Looks Good!</span>
-                    <span id="cityEditReq">City is required!</span>
-                    <span id="cityEditLen"></span>
+                    <Form.Control required as="select" defaultValue="Choose..." id="cityEdit" onChange={(e) => { setCity(e.target.value); }}>
+                      <option value="">Choose from below</option>
+                      <option value="Vancouver">Vancouver</option>
+                      <option value="Surrey">Surrey</option>
+                      <option value="Burnaby">Burnaby</option>
+                      <option value="New Westminster">New Westminster</option>
+                      <option value="Port Coquitlam">Port Coquitlam</option>
+                      <option value="North Vancouver">North Vancouver</option>
+                      <option value="Langley">Langley</option>
+                      <option value="Delta">Delta</option>
+                      <option value="Richmond">Richmond</option>
+                      <span id="cityEditOK">Looks Good!</span>
+                      <span id="cityEditReq">City is required!</span>
+                      <span id="cityEditLen"></span>
+                    </Form.Control>
                   </Form.Group>
                 </Form.Row>
               </ReactBootStrap.Col>
@@ -1716,7 +1736,7 @@ function editType() {
                     <Form.Control required as="select" minLength="3" defaultValue="Choose..." id="stateEdit" onChange={(e) => { setState(e.target.value); }}>
                       <option value="">Choose from below</option>
                       <option value="British Columbia">British Columbia</option>
-                      <option value="Alberta">Alberta</option>
+                      {/* <option value="Alberta">Alberta</option> */}
                     </Form.Control>
                     <span id="stateEditOK">Looks Good!</span>
                     <span id="stateEditReq">State is required!</span>

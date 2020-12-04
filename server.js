@@ -229,7 +229,7 @@ app.post("/order/insert", (req, res) => {
   const orderZip = req.body.orderZip;
   const orderComments = req.body.orderComments;
   const sqlInsert =
-    "INSERT INTO ordering_table (status, gift, occasion, type, number_musicians, suprise, firstName, lastName, date_service, time_service, offered, number, email, address, address_2, city, state, zip, comments) VALUES ('Pending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO ordering_table (status, gift, occasion, type, number_musicians, suprise, firstName, lastName, date_service, time_service, offered, number, email, address, city, state, zip, comments) VALUES ('Pending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
   db.query(
     sqlInsert,
     [
@@ -246,7 +246,6 @@ app.post("/order/insert", (req, res) => {
       orderNumber,
       orderEmail,
       orderAddress,
-      orderAddress2,
       orderCity,
       orderState,
       orderZip,
@@ -399,8 +398,16 @@ app.put("/musician/update", (req, res) => {
   const email = req.body.musicianEmail;
   const address = req.body.musicianAddress;
   const training = req.body.musicianTraining;
+
+  const numberMusicians = req.body.musicianNumber;
+  const etransfer = req.body.musicianEtransfer;
+  const postalCode = req.body.musicianPostalCode;
+  const province = req.body.musicianProvince;
+  const city = req.body.musicianCity;
+
+
   // const group = req.body.musicianGroup;
-  const sqlUpdate = "UPDATE musician_table SET firstName = ?, lastName = ?, phone = ?, email = ?, address = ?, training = ? WHERE id = ?";
+  const sqlUpdate = "UPDATE musician_table SET firstName = ?, lastName = ?, phone = ?, email = ?, address = ?, training = ?, number_musicians = ?, iban = ?, postalCode = ?, province = ?, city = ? WHERE id = ?";
   db.query(sqlUpdate, [
     firstName,
     lastName,
@@ -408,6 +415,11 @@ app.put("/musician/update", (req, res) => {
     email,
     address,
     training,
+    numberMusicians,
+    etransfer,
+    postalCode,
+    province,
+    city,
     id
   ], (err, result) => {
     if (err) {

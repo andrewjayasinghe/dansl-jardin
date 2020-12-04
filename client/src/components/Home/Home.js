@@ -39,19 +39,19 @@ class Home extends Component {
             <ReactBootStrap.Container className="top-space1">
 
 
-                <ReactBootStrap.Row>
+                <ReactBootStrap.Row style={{paddingTop:"50px"}}>
                         {/* <div id="main-box"> */}
 
                         <div id="left_boxes" style={{marginLeft:"auto", marginTop:"100px"}}>
 
-                        <div className="fade-in2" style={{width:"200px", marginLeft:"-20px"}}>
-                        <p id="towerText1" style={{textAlign:"right"}}>A trumpeter for <br/>30 years named Leonardo.</p>
-                        <div style={{marginTop:'-20px', textAlign:"right"}}><p id="towerText1-2">Monday 6.30 p.m. - Neda</p></div>
+                        <div className="fade-in2" style={{width:"200px", marginLeft:"-20px", marginTop:"-10px"}}>
+                        <p id="towerText1" style={{textAlign:"right", lineHeight: "19px"}}>A trumpeter for <br/>30 years named Andrew.</p>
+                        <div style={{marginTop:'-20px', textAlign:"right", width:"183px"}}><p id="towerText1-2">Monday 6.30 p.m. - Burnaby</p></div>
                         </div>
 
-                        <div className="fade-in3" style={{width:"250px", marginTop:"250px", marginRight:"-50px"}}>
-                        <p id="towerText1" style={{textAlign:"right"}}>An accordionist under Aunt <br/>Jacqueline's balcony. </p>
-                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Wednesday 3:30 p.m. - Andrew</p></div>
+                        <div className="fade-in3" style={{width:"250px", marginTop:"280px", marginRight:"-50px"}}>
+                        <p id="towerText1" style={{textAlign:"right", lineHeight: "18px"}}>An accordionist under Aunt <br/>Neda's balcony. </p>
+                        <div style={{marginTop:'-20px', width:"209px", textAlign:"right"}}><p id="towerText1-2">Wednesday 3:30 p.m. - Vancouver</p></div>
                         </div>
 
                         </div>
@@ -66,12 +66,11 @@ class Home extends Component {
 
                         <div class="home_box_pos">
 
-                        <div id="right_box" className="fade-in" style={{width:'350px', height:"100px", marginLeft:"-50px"}}>
-                        <p id="towerText1">A saxophonist for Nadine and Yves, Jazzy atmosphere! </p>
-                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Bonny</p></div>
+                        <div id="right_box" className="fade-in" style={{width:'350px', height:"100px", marginLeft:"-90px", marginBottom:"50px", marginTop:"-150px"}}>
+                        <p id="towerText1" style={{lineHeight: "18px"}}>A saxophonist for Anthony and Karan, Jazzy atmosphere! </p>
+                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Surrey</p></div>
                         </div>
-
-                                <p className="mainTowerText">OFFER <br/>A MUSICIAN AT HOME <br/>TO THE PEOPLE YOU LOVE.</p>
+                                <p className="mainTowerText">SEND <br/>A MUSICAL EXPERIENCE <br/>TO THE PEOPLE YOU LOVE.</p>
                                 <p className="mainTowerText" style={{color:'#D60B52'}}>IN LESS THAN 3 MINUTES!</p>
                             <a href={process.env.PUBLIC_URL + '/#/order'}><input type="button" value="Order now" className="home_Button" /></a>
                         </div>

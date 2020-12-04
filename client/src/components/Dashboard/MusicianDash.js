@@ -27,11 +27,31 @@ function MusicianDashboard() {
     var address = musicianDetails.address;
     var phone = musicianDetails.phone;
     var email = musicianDetails.email;
-    var training = musicianDetails.training;
 
+    var etransfer = musicianDetails.etransfer;
+    var postalCode = musicianDetails.postalCode;
+    var province = musicianDetails.province;
+    var city = musicianDetails.city;
+
+    var training = musicianDetails.training;
+    var numberMusicians = musicianDetails.number_musicians;
+    
+
+    
     var commentBox = "";
 
-    // const [lastName, setLastName] = useState('');
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [address, setAddress] = useState("");
+    // const [phone, setPhone] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [training, setTraining] = useState("");
+
+    // const [postalCode, setPostalCode] = useState("");
+    // const [city, setCity] = useState("");
+    // const [province, setProvince] = useState("");
+    // const [etransfer, setEtransfer] = useState("");
+
     // var [address, setAddress] = useState(musicianDetails.address);
     // const [phone, setPhone] = useState(musicianDetails.phone);
     // const [email, setEmail] = useState(musicianDetails.email);
@@ -43,6 +63,9 @@ function MusicianDashboard() {
 
 
     const updateMusician = () => {
+        // if (firstName !
+        console.log(musicianDetails.city);
+
         Axios.put("/musician/update", {
             musicianID: musicianDetails.id,
             musicianFirstName: firstName,
@@ -50,14 +73,17 @@ function MusicianDashboard() {
             musicianAddress: address,
             musicianPhone: phone,
             musicianEmail: email,
-            //   musicianPassword: password,
-            //   musicianConfirmPassword: confirmpassword,
-            musicianTraining: training
-            //   musicianGroup: group,
+            musicianTraining: training,
+            musicianNumber: numberMusicians,
+            musicianEtransfer: etransfer,
+            musicianPostalCode: postalCode,
+            musicianProvince: province,
+            musicianCity: city
         }).then(() => {
-            alert("sucessful insert");
+            console.log("sucessful update");
         });
         window.location.reload();
+
     };
 
     Axios.defaults.withCredentials = true;
@@ -127,7 +153,7 @@ function MusicianDashboard() {
             comment: commentBox,
             orderEmail: email
         }).then(() => {
-            alert("sucessful insert");
+            console.log("sucessful insert");
         });
         window.location.reload();
         // window.location.reload();
@@ -142,13 +168,13 @@ function MusicianDashboard() {
         comment: commentBox,
         orderEmail: ""
     }).then(() => {
-        alert("sucessful insert");
+        console.log("sucessful insert");
     });
     Axios.put("/orderStatus/update", {
         orderID: id,
         status: "Declined",
     }).then(() => {
-        alert("sucessful insert");
+        console.log("sucessful insert");
         });
     window.location.reload();
     }
@@ -291,37 +317,68 @@ function MusicianDashboard() {
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">First Name: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.firstName} onChange={(e) => { firstName = e.target.value }} /></ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.firstName} onChange={(e) => { musicianDetails.firstName = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
                     <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Last Name: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.lastName} onChange={(e) => { lastName = e.target.value }} /></ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.lastName} onChange={(e) => {musicianDetails.lastName = e.target.value}} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
                     <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Phone: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.phone} onChange={(e) => { phone = e.target.value }} /></ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.phone} onChange={(e) => { musicianDetails.phone = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
                     <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Email: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.email} onChange={(e) => { email = e.target.value }} /></ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.email} onChange={(e) => { musicianDetails.email = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
                     <ReactBootStrap.Row className="field_align">
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Address: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.address} onChange={(e) => { address = e.target.value }} /></ReactBootStrap.Col>
-
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.address} onChange={(e) => { musicianDetails.address = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
+
+                    <ReactBootStrap.Row className="field_align">
+                        <ReactBootStrap.Col md="auto">
+                            <p className="profileHeader">City: </p>
+                        </ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto">
+                            {/* <input type="text" placeholder={musicianDetails.city} onChange={(e) => { musicianDetails.city = e.target.value }} /> */}
+
+                        <select style={{width:"170px", height:"35px"}} onChange={(e) => { musicianDetails.city = e.target.value }}>
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Vancouver">Vancouver</option>
+                            <option value="Surrey">Surrey</option>
+                            <option value="Burnaby">Burnaby</option>
+                            <option value="Richmond">Richmond</option>
+                            <option value="Port Coquitlam">Port Coquitlam</option>
+                            <option value="North Vancouver">North Vancouver</option>
+                            <option value="Langley">Langley</option>
+                            <option value="Delta">Delta</option>
+                            <option value="New Westminster">New Westminster</option>
+                        </select>
+
+                        </ReactBootStrap.Col>
+                    </ReactBootStrap.Row>
+
+                    <ReactBootStrap.Row className="field_align">
+                        <ReactBootStrap.Col md="auto">
+                            <p className="profileHeader">Postal Code: </p>
+                        </ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.postalCode} onChange={(e) => { musicianDetails.postalCode = e.target.value }} /></ReactBootStrap.Col>
+                    </ReactBootStrap.Row>
+
+                    
 
                     <ReactBootStrap.Row style={{ marginTop: "10px" }}>
                         <ReactBootStrap.Col style={{textAlign:"left"}}>
@@ -334,7 +391,7 @@ function MusicianDashboard() {
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Training: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.training} onChange={(e) => { training = e.target.value }} /></ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.training} onChange={(e) => { musicianDetails.training = e.target.value }} /></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
                     {/* <ReactBootStrap.Row className="field_align">
@@ -348,7 +405,7 @@ function MusicianDashboard() {
                         <ReactBootStrap.Col md="auto">
                             <p className="profileHeader">Solo/Duo: </p>
                         </ReactBootStrap.Col>
-                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.number_musicians} /></ReactBootStrap.Col>
+                        <ReactBootStrap.Col md="auto"><input type="text" placeholder={musicianDetails.number_musicians} onChange={(e) => { musicianDetails.number_musicians = e.target.value }}/></ReactBootStrap.Col>
                     </ReactBootStrap.Row>
 
                     <ReactBootStrap.Row className="justify-button">
