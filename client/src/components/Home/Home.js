@@ -46,12 +46,12 @@ class Home extends Component {
 
                         <div className="fade-in2" style={{width:"200px", marginLeft:"-20px"}}>
                         <p id="towerText1" style={{textAlign:"right"}}>A trumpeter for <br/>30 years named Leonardo.</p>
-                        <div style={{marginTop:'-20px', textAlign:"right"}}><p id="towerText1-2">Monday 6.30 p.m. - Lausanne</p></div>
+                        <div style={{marginTop:'-20px', textAlign:"right"}}><p id="towerText1-2">Monday 6.30 p.m. - Neda</p></div>
                         </div>
 
                         <div className="fade-in3" style={{width:"250px", marginTop:"250px", marginRight:"-50px"}}>
                         <p id="towerText1" style={{textAlign:"right"}}>An accordionist under Aunt <br/>Jacqueline's balcony. </p>
-                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Wednesday 3:30 p.m. - Yverdon</p></div>
+                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Wednesday 3:30 p.m. - Andrew</p></div>
                         </div>
 
                         </div>
@@ -68,7 +68,7 @@ class Home extends Component {
 
                         <div id="right_box" className="fade-in" style={{width:'350px', height:"100px", marginLeft:"-50px"}}>
                         <p id="towerText1">A saxophonist for Nadine and Yves, Jazzy atmosphere! </p>
-                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Grimentz</p></div>
+                        <div style={{marginTop:'-20px'}}><p id="towerText1-2">Saturday 11:00 am - Bonny</p></div>
                         </div>
 
                                 <p className="mainTowerText">OFFER <br/>A MUSICIAN AT HOME <br/>TO THE PEOPLE YOU LOVE.</p>

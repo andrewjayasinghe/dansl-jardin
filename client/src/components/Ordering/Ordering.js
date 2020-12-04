@@ -1140,7 +1140,7 @@ function editType() {
                 <Form.Control required as="select" minLength="3" defaultValue="Choose..." onChange={(e) => { setState(e.target.value); }}>
                   <option value="">Choose from below</option>
                   <option value="British Columbia">British Columbia</option>
-                  <option value="Alberta">Alberta</option>
+                  {/* <option value="Alberta">Alberta</option> */}
                 </Form.Control>
                 <span id="stateOK">Looks Good!</span>
                 <span id="stateReq">State is required!</span>
