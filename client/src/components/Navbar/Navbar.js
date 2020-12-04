@@ -44,11 +44,11 @@ class Navbar extends Component {
 
         return (
         <ReactBootStrap.Navbar collapseOnSelect expand="lg" className="color-nav" variant="dark" style={{boxShadow: "none"}}>
-            <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" className="navDropDown" />
+          <div id="logo-href">
+<a href={process.env.PUBLIC_URL + '/#/'} onClick={active}><img src={main_logo2} id="logo-nav" alt="main-logo" /></a></div>
+            <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" className="navDropDown"/>
             
-            <div id="logo-href">
-<a href={process.env.PUBLIC_URL + '/#/'} onClick={active}><img src={main_logo2} id="logo-nav" alt="main-logo" /></a>
-</div>
+            
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" style={{textShadow: "none"}}>
 
   <ReactBootStrap.Nav className="mr-auto" style={{textShadow: "none"}}>
