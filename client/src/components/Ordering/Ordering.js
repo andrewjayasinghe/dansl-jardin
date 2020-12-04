@@ -226,8 +226,9 @@ function Ordering() {
       orderZip: zip,
       orderComments: comments
     }).then(() => {
-      alert("sucessful insert");
+      console.log("sucessful insert");
     })
+    alert("Sucesfully created order, email has been sent.");
   };
 
 

@@ -488,7 +488,7 @@ class Home extends Component {
                     <div className="cards3">
                 <br></br>
 
-                    <Feed userName="dans_l_jardin" className="Feed" classNameLoading="Loading"/>
+                    {/* <Feed userName="dans_l_jardin" className="Feed" classNameLoading="Loading" /> */}
                 </div>
                 </ReactBootStrap.Row>
 
