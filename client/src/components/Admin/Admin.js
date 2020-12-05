@@ -461,7 +461,6 @@ function Test() {
     // "Number",
     "Email",
     "Address",
-    "Location",
     "City",
     "State",
     "Zip",

@@ -4,6 +4,8 @@ import ScheduleSelector from 'react-schedule-selector';
 import Axios from "axios";
 import "./MusicianRegister.css";
 import "mdbreact/dist/css/mdb.css";
+import MediaQuery from 'react-responsive';
+
 // import { Satellite } from "@material-ui/icons";
 
 // ######## This function is used to 
@@ -1264,26 +1266,48 @@ function MusicianRegister() {
 
 
 {/* #####This section is for the calender on the musician registration page####### */}
+<MediaQuery orientation={"landscape"}>
+<div className='calender'>
 
+<ScheduleSelector
+  selection={state.schedule}
+  numDays={7}
+  minTime={9}
+  maxTime={21}
+  hourlyChunks={2}
+  startDate={new Date('Monday Nov 02 2020 00:00:00')}
+  dateFormat="ddd"
+  timeFormat='h:mma'
+  hoveredColor='none'
+  onChange={handleChange}
+  hoveredColor='#4d6b0f'
+  unselectedColor='#81A92F'
+  selectedColor='#4d6b0f'
+/>
+</div>
 
-          <div className='calender'>
+</MediaQuery>
+<MediaQuery orientation={"portrait"}>
+<div className='calender'>
 
-            <ScheduleSelector
-              selection={state.schedule}
-              numDays={7}
-              minTime={9}
-              maxTime={21}
-              hourlyChunks={2}
-              startDate={new Date('Monday Nov 02 2020 00:00:00')}
-              dateFormat="ddd"
-              timeFormat='h:mma'
-              hoveredColor='none'
-              onChange={handleChange}
-              hoveredColor='#4d6b0f'
-              unselectedColor='#81A92F'
-              selectedColor='#4d6b0f'
-            />
-          </div>
+<ScheduleSelector
+  selection={state.schedule}
+  numDays={7}
+  minTime={9}
+  maxTime={21}
+  hourlyChunks={2}
+  startDate={new Date('Monday Nov 02 2020 00:00:00')}
+  dateFormat="ddd"
+  timeFormat='h:mma'
+  hoveredColor='none'
+  onChange={handleChange}
+  unselectedColor='#81A92F'
+  selectedColor='#4d6b0f'
+/>
+</div>
+</MediaQuery>
+
+          
           <ReactBootStrap.Row className="justify-buttons">
             <input type="button" value="Save Schedule" className="cal_button" onClick={seperate} />
             <a href="/#/"><input style={{marginLeft:"20px"}} type="button" value="Submit Form" className="sub_button" onClick={submitMusician} id="regedit"/></a>
