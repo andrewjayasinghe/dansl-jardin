@@ -4,8 +4,8 @@ import * as ReactBootStrap from "react-bootstrap";
 import './Login.css'
 
 function Login() {
-  // const [usernameReg, setUsernameReg] = useState("");
-  // const [passwordReg, setPasswordReg] = useState("");
+  const [usernameReg, setUsernameReg] = useState("");
+  const [passwordReg, setPasswordReg] = useState("");
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -14,14 +14,14 @@ function Login() {
 
   Axios.defaults.withCredentials = true;
 
-  // const register = () => {
-  //   Axios.post("/register", {
-  //     username: usernameReg,
-  //     password: passwordReg
-  //   }).then((response) => {
-  //     // console.log(response);
-  //   });
-  // };
+  const register = () => {
+    Axios.post("/register", {
+      username: usernameReg,
+      password: passwordReg
+    }).then((response) => {
+      // console.log(response);
+    });
+  };
 
   const login = () => {
     Axios.post("/login", {
@@ -100,6 +100,13 @@ function Login() {
             Login
                 </ReactBootStrap.Button></ReactBootStrap.Row>
       </ReactBootStrap.Container>
+
+      <h2>Register</h2>
+        <label>Username </label>
+        <input type="text" onChange={(e) => {setUsernameReg(e.target.value)}}/><br />
+        <label>Password </label>
+        <input type="text" onChange={(e) => {setPasswordReg(e.target.value)}}/><br />
+        <input type="button" value="Register" onClick={register}/> 
     </div>
 
         // <div>

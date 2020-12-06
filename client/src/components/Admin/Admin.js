@@ -524,7 +524,13 @@ function Test() {
     "# of Musicians",
     "Site",
     "Media",
-    // , "Mon", "Tues"
+    { name: "Monday", options: { display: false } },
+    { name: "Tuesday", options: { display: false } },
+    { name: "Wednesday", options: { display: false } },
+    { name: "Thursday", options: { display: false } },
+    { name: "Friday", options: { display: false } },
+    { name: "Saturday", options: { display: false } },
+    { name: "Sunday", options: { display: false } },
   ];
 
   const columnsMusicianMatch = [
@@ -586,7 +592,13 @@ function Test() {
     "# of Musicians",
     "Site",
     "Media",
-    // , "Mon", "Tues"
+    { name: "Monday", options: { display: false } },
+    { name: "Tuesday", options: { display: false } },
+    { name: "Wednesday", options: { display: false } },
+    { name: "Thursday", options: { display: false } },
+    { name: "Friday", options: { display: false } },
+    { name: "Saturday", options: { display: false } },
+    { name: "Sunday", options: { display: false } },
   ];
 
   const options = {

@@ -430,6 +430,38 @@ app.put("/musician/update", (req, res) => {
   });
 });
 
+app.put("/musicianSchedule/update", (req, res) => {
+  const id = req.body.musicianID;
+  const mon = req.body.monday;
+  const tues = req.body.tuesday;
+  const wed = req.body.wednesday;
+  const thurs = req.body.thursday;
+  const fri = req.body.friday;
+  const sat = req.body.saturday;
+  const sun = req.body.sunday;
+
+
+
+  // const group = req.body.musicianGroup;
+  const sqlUpdate = "UPDATE musician_table SET monday = ?, tuesday = ?, wednesday = ?, thursday = ?, friday = ?, saturday = ?, sunday = ? WHERE id = ?";
+  db.query(sqlUpdate, [
+    mon,
+    tues,
+    wed,
+    thurs,
+    fri,
+    sat,
+    sun,
+    id
+  ], (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("Succesfully Updated")
+    }
+  });
+});
+
 
 app.put("/order/update", (req, res) => {
   const id = req.body.orderID;

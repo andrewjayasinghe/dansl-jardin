@@ -83,6 +83,10 @@ h2 {
     width: 130px;
 }
 
+#musDashSched {
+    display: none;
+}
+
 #profilePage {
     display: block;
 }
@@ -144,11 +148,20 @@ h2 {
         border-radius: 10px;
      padding: 10px;
      /* width: 75%; */
-}}
+
+    }
+    #musDashSched {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+}
 
 
 
 @media only screen and (orientation:landscape){
+    #musDashSched {
+        margin-left: 20px;
+    }
     .orders{
         background-color: grey;
         margin-bottom: 20px;

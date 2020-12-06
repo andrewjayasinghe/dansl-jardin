@@ -10,10 +10,100 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 function MusicianDashboard() {
 
     const [state, setSchedule] = useState({});
+    const [mon, setMon] = useState("");
+    const [tue, setTue] = useState("");
+    const [wed, setWed] = useState("");
+    const [thu, setThu] = useState("");
+    const [fri, setFri] = useState("");
+    const [sat, setSat] = useState("");
+    const [sun, setSun] = useState("");
+
     const handleChange = newSchedule => {
         setSchedule({ schedule: newSchedule });
-    
       }
+
+      const seperate = () => {
+
+        let monx = [];
+        let tuex = [];
+        let wedx = [];
+        let thux = [];
+        let frix = [];
+        let satx = [];
+        let sunx = [];
+        let dateObj = [];
+    
+    
+    
+        for (let index = 0; index < state.schedule.length; index++) {
+          if (state.schedule[index].getDate() === 2) {
+            let monHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            monx.push(monHour);
+    
+          } if (state.schedule[index].getDate() === 3) {
+            let tueHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            tuex.push(tueHour);
+    
+          } if (state.schedule[index].getDate() === 4) {
+            let wedHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            wedx.push(wedHour);
+    
+    
+          } if (state.schedule[index].getDate() === 5) {
+            let thuHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            thux.push(thuHour);
+    
+          } if (state.schedule[index].getDate() === 6) {
+            let friHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            frix.push(friHour);
+    
+          } if (state.schedule[index].getDate() === 7) {
+            let satHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            satx.push(satHour);
+    
+          } if (state.schedule[index].getDate() === 8) {
+            let sunHour = state.schedule[index].getHours() + ":" + state.schedule[index].getMinutes()
+            sunx.push(sunHour);
+          }
+        }
+    
+        // dateObj.push(availability);
+        // console.log(dateObj);
+    
+        setMon(JSON.stringify(monx)); 
+        setTue(JSON.stringify(tuex));
+        setWed(JSON.stringify(wedx));
+        setThu(JSON.stringify(thux));
+        setFri(JSON.stringify(frix));
+        setSat(JSON.stringify(satx));
+        setSun(JSON.stringify(sunx));
+        // setDate_time(JSON.stringify(dateObj));
+        // console.log(date_time);
+        if (state.schedule.length === 0) {
+          alert("nothing has been selected")
+        } else {
+             document.getElementById("musDashSched").style.display = "initial";
+        }
+      }
+
+      const updateMusicianSchedule = () => {
+
+        Axios.put("/musicianSchedule/update", {
+            musicianID: musicianDetails.id,
+            monday: mon,
+            tuesday: tue,
+            wednesday: wed,
+            thursday: thu,
+            friday: fri,
+            saturday: sat,
+            sunday: sun
+        }).then(() => {
+            console.log("sucessful update");
+        });
+        alert("Schedule has been updated!")
+        window.location.reload();
+
+    };
 
     const [user, setUser] = useState("");
     const [orders, setOrders] = useState([]);
@@ -488,7 +578,10 @@ function MusicianDashboard() {
               selectedColor='#4d6b0f'
             />
           </div>
-          <input type="button" value="Save Schedule" className="cal_button" style={{marginTop:"30px"}} onClick={()=>{window.location.reload();}}/>
+          <div>
+          <input type="button" value="Save Schedule" className="cal_button" style={{marginTop:"30px"}} onClick={seperate}/>
+          <input type="button" value="Submit" className="sub_button" id="musDashSched" onClick={updateMusicianSchedule}/></div>
+          {/* <input type="button" onClick={()=>{console.log(musicianDetails)}}/> */}
                             </div>
                     </ReactBootStrap.Row>
                 </ReactBootStrap.Container>
@@ -497,7 +590,7 @@ function MusicianDashboard() {
                 
                     <ReactBootStrap.Container className="dashboardContainer" id="statsPage">
                     {accepted.map((value, index) => {
-                        let addressURL = "https://www.google.com/maps/dir/?api=1&{}origin=Space+Needle+Seattle+WA&destination=" + value.address + "+" + value.address_2;
+                        let addressURL = "https://www.google.com/maps/dir/?api=1&{}origin=Space+Needle+Seattle+WA&destination=" + value.address;
                         let box = index;
                         return <div className="orders" id= {box}><div  className="justify-content-md-center">
                             <h5 id ='maps'><strong>{value.firstName} {value.lastName}</strong></h5>
@@ -508,7 +601,7 @@ function MusicianDashboard() {
                             {/* <input type="button" value="Accept" className='accept'/><input type="button" value="Decline" className='decline'  onClick={()=>show(t,r)} />    */}
                            {/* <ReactBootStrap.Button variant = 'primary' size='md' className='accept' onClick={() => {updateStatus(value.id, "Confirmed")}}>Accept</ReactBootStrap.Button>
                            <ReactBootStrap.Button variant = 'danger'size="md" className='decline' onClick={()=>show(t,r)} >Decline</ReactBootStrap.Button>*/}
-                           <ReactBootStrap.Button variant = 'success' size='md' href={addressURL} className='mapsButton'>Maps</ReactBootStrap.Button> 
+                           <ReactBootStrap.Button variant = 'success' size='md' className='mapsButton' onClick={()=>{window.open(addressURL)}}>Maps</ReactBootStrap.Button> 
                             {/* <a href={addressURL}><input type="button" value="Google Maps" className='mapsButton' /></a> */}
                            </div>
                             <div >

@@ -45,7 +45,7 @@ class Home extends Component {
                         <div id="left_boxes" style={{marginLeft:"auto", marginTop:"100px"}}>
 
                         <div className="fade-in2" style={{width:"200px", marginLeft:"-20px", marginTop:"-10px"}}>
-                        <p id="towerText1" style={{textAlign:"right", lineHeight: "19px"}}>A trumpeter for <br/>30 years named Andrew.</p>
+                        <p id="towerText1" style={{textAlign:"right", lineHeight: "19px"}}>A trumpet player for<br/>30 years named Andrew.</p>
                         <div style={{marginTop:'-20px', textAlign:"right", width:"183px"}}><p id="towerText1-2">Monday 6.30 p.m. - Burnaby</p></div>
                         </div>
 
@@ -147,8 +147,8 @@ class Home extends Component {
 
                                 <img alt="" class="card-img-top" src={firstPicture} style={{ width: "50%" }}></img>
                                 <br></br>
-                                <p class="card-text3" id = 'neutra2'><br />"Grandma Léa's birthday!"</p><br/>
-                                <p class="card-text3" id = 'neutra2'>"A little aperitif with friends"</p><br/>
+                                <p class="card-text3" id = 'neutra2'><br />"A birthday party with friends!"</p><br/>
+                                {/* <p class="card-text3" id = 'neutra2'>"A little aperitif with friends"</p><br/> */}
                                 <p class="card-text3" id = 'neutra2'>"Violin for a romantic evening!"</p>
 
                             </ReactBootStrap.Col>
@@ -157,7 +157,7 @@ class Home extends Component {
                                 <h1 class="secondsection" id = 'proxima'>2</h1>
                                 <h1 class="cardHeader" id = 'neutra'>Decide the music<br></br><br></br></h1>
                                 <img alt="" class="card-img-top" style={{ width: "50%" }} src={thirdPicture}></img>
-                                <p class="card-text3" id = 'neutra2'><br />You decide the style of music! In addition to this, you need to know more about it. We take care of finding the musicians available in your region on the date and time indicated.</p>
+                                <p class="card-text3" id = 'neutra2'><br />You decide the style of music! We find the musicians available in your region according to the time and date you select.</p>
 
                             </ReactBootStrap.Col>
                             <ReactBootStrap.Col md={3}>
@@ -175,7 +175,7 @@ class Home extends Component {
                                 <h1 class="secondsection" id = 'proxima'>4</h1>
                                 <h1 class="cardHeader" id = 'neutra'>Listen and savor<br></br><br></br></h1>
                                 <img alt="" class="card-img-top" src={secondPicture} style={{ width: "50%" }}></img>
-                                <p class="card-text3"  id = 'neutra2'><br />On the date and at the time indicated, one or two musicians will appear in front of the beneficiary's door on time and will play for 20 minutes. </p>
+                                <p class="card-text3"  id = 'neutra2'><br />On the time and date chosen one or more musicians will come and play for the person of your choice for 20 minutes. Make sure to tell us where you want this musical experience to take place.</p>
                                 {/* <p class="card-text2" id = 'neutra'>Let the music begin!</p> */}
 
                             </ReactBootStrap.Col>
@@ -235,7 +235,7 @@ class Home extends Component {
                     <div class="cards4">
                         <br></br>
                         <div style={{marginTop:'30px', marginBottom:'30px'}}>
-                        <h1 class="textAlign2">SO, DO YOU WANT TO TRY A UNIQUE EXPERIENCE?</h1>
+                        <h1 class="textAlign2">SEND AN IN-PERSON MUSICAL HUG TODAY! </h1>
                         <br></br>
                         <p class="card-text4" style={{fontSize:'25px'}}>Whether for your loved ones or for yourself, <br></br>treat yourself with a privileged moment of home music by clicking on this gift.</p>
                         <br></br>
@@ -257,7 +257,7 @@ class Home extends Component {
                         <br></br>
                         <div style={{marginTop:'30px', marginBottom:'50px'}}>
 
-                        <h1 class="textAlign2" style={{paddingTop:'20px', paddingBottom:'50px'}}>DANS L'JARDIN, IN REAL LIFE, IT GIVES THAT!</h1>
+                        <h1 class="textAlign2" style={{paddingTop:'20px', paddingBottom:'50px'}}>THIS IS DANS L'JARDIN!</h1>
                         <div className="player-wrapper">
                             <MediaQuery orientation={"Landscape"}>
                                 <ReactPlayer

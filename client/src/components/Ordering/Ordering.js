@@ -360,13 +360,7 @@ function Ordering() {
         document.getElementById("cityReq").style.display = "block";
         document.getElementById("cityOK").style.display = "none";
       }
-      if (city.length < 3 && city.length >= 1) {
-        document.getElementById("cityLen").style.display = "block";
-        document.getElementById("cityReq").style.display = "none";
-        document.getElementById("cityOK").style.display = "none";
-      }
-      if (city.length >= 3 && city !== "_  _  _  _  _  _") {
-        document.getElementById("cityLen").style.display = "none";
+      if (city !== "" && city !== "_  _  _  _  _  _") {
         document.getElementById("cityReq").style.display = "none";
         document.getElementById("cityOK").style.display = "block";
       }
@@ -626,13 +620,7 @@ function Ordering() {
       document.getElementById("cityEditReq").style.display = "block";
       document.getElementById("cityEditOK").style.display = "none";
     }
-    if (city.length < 3 && city.length >= 1) {
-      document.getElementById("cityEditLen").style.display = "block";
-      document.getElementById("cityEditReq").style.display = "none";
-      document.getElementById("cityEditOK").style.display = "none";
-    }
-    if (city.length >= 3 && city !== "_  _  _  _  _  _") {
-      document.getElementById("cityEditLen").style.display = "none";
+    if (city !== "" && city !== "_  _  _  _  _  _") {
       document.getElementById("cityEditReq").style.display = "none";
       document.getElementById("cityEditOK").style.display = "block";
     }
@@ -813,6 +801,22 @@ function editType() {
   else if (currentType ===  "surprise") {
     setType("suprise"); 
     setTypeText("A surprise");
+  }
+}
+
+function submitOrderModal() {
+  // Get the modal
+  document.getElementById("orderModal").style.display = "block";
+}
+
+function closeModal() {
+  window.location.replace(process.env.PUBLIC_URL + '/#/')
+}
+
+window.onclick = function(event) {
+  let modal = document.getElementById("orderModal")
+  if (event.target == modal) {
+    window.location.replace(process.env.PUBLIC_URL + '/#/');
   }
 }
 
@@ -1139,10 +1143,10 @@ function editType() {
                   <option value="Langley">Langley</option>
                   <option value="Delta">Delta</option>
                   <option value="Richmond">Richmond</option>
+                  </Form.Control>
                   <span id="cityOK">Looks Good!</span>
                   <span id="cityReq">City is required!</span>
                   <span id="cityLen"></span>
-                  </Form.Control>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
@@ -1496,7 +1500,8 @@ function editType() {
           <ReactBootStrap.Row className="justify-content-md-center">
             <div class="buttonAlign">
             <input type="button" value="Back" className="ordering_back_button" onClick={backFinal}/>
-            <a href={process.env.PUBLIC_URL + '/#/'}><input type="button" value="Submit Order" className="ordering_next_button" onClick={submitOrder}/></a>
+            <input type="button" value="Submit Order" className="ordering_next_button" onClick={(e) => {submitOrderModal(); submitOrder() }}/>
+            {/* <a href={process.env.PUBLIC_URL + '/#/'}><input type="button" value="Submit Order" className="ordering_next_button" onClick={submitOrder}/></a> */}
               {/* <ReactBootStrap.Button variant="danger" className='button' onClick={backFinal}>Back</ReactBootStrap.Button> */}
               {/* <a href={process.env.PUBLIC_URL + '/#/'}> */}
                 {/* <ReactBootStrap.Button md="auto" variant="success" className='button' style={{ width: '185px' }} onClick={submitOrder}>Submit Order</ReactBootStrap.Button> */}
@@ -1717,10 +1722,10 @@ function editType() {
                       <option value="Langley">Langley</option>
                       <option value="Delta">Delta</option>
                       <option value="Richmond">Richmond</option>
-                      <span id="cityEditOK">Looks Good!</span>
+                    </Form.Control>
+                    <span id="cityEditOK">Looks Good!</span>
                       <span id="cityEditReq">City is required!</span>
                       <span id="cityEditLen"></span>
-                    </Form.Control>
                   </Form.Group>
                 </Form.Row>
               </ReactBootStrap.Col>
@@ -1836,6 +1841,13 @@ function editType() {
         </Form>
         </ReactBootStrap.Container>
       </ReactBootStrap.Container>
+
+      <div id="orderModal" class="orderModal">
+      <div class="orderModal-content">
+        <span class="close" onClick={closeModal}>&times;</span>
+        <p class="orderModalText">Sucesfully created order, email has been sent.</p>
+      </div>
+    </div>
 
     </ReactBootStrap.Container>
 
