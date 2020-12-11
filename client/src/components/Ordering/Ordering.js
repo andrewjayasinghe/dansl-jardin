@@ -731,8 +731,8 @@ function Ordering() {
     document.getElementById("zipEditReq").style.display = "none";
     document.getElementById("zipEditOK").style.display = "block";
 
-    document.getElementById("stateEditReq").style.display = "none";
-    document.getElementById("stateEditOK").style.display = "block";
+    // document.getElementById("stateEditReq").style.display = "none";
+    // document.getElementById("stateEditOK").style.display = "block";
 
     document.getElementById("cityEditLen").style.display = "none";
     document.getElementById("cityEditReq").style.display = "none";
@@ -1731,7 +1731,7 @@ window.onclick = function(event) {
               </ReactBootStrap.Col>
           </ReactBootStrap.Row>
 
-          <ReactBootStrap.Row>
+          {/* <ReactBootStrap.Row>
               <ReactBootStrap.Col md="auto">
                 <p className="intro">State:</p>
               </ReactBootStrap.Col>
@@ -1741,14 +1741,13 @@ window.onclick = function(event) {
                     <Form.Control required as="select" minLength="3" defaultValue="Choose..." id="stateEdit" onChange={(e) => { setState(e.target.value); }}>
                       <option value="">Choose from below</option>
                       <option value="British Columbia">British Columbia</option>
-                      {/* <option value="Alberta">Alberta</option> */}
                     </Form.Control>
                     <span id="stateEditOK">Looks Good!</span>
                     <span id="stateEditReq">State is required!</span>
                   </Form.Group>
                 </Form.Row>
               </ReactBootStrap.Col>
-          </ReactBootStrap.Row>
+          </ReactBootStrap.Row> */}
 
           <ReactBootStrap.Row>
               <ReactBootStrap.Col md="auto">

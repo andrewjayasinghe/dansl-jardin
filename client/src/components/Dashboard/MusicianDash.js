@@ -510,7 +510,7 @@ function MusicianDashboard() {
 
                 <ReactBootStrap.Container id="requestsPage">
                     {orders.map((value, index) => {
-                        let addressURL = "https://www.google.com/maps/dir/?api=1&{}origin=Space+Needle+Seattle+WA&destination=" + value.address + "+" + value.address_2;
+                        let addressURL = "https://www.google.com/maps/dir/?api=1&{}origin=Space+Needle+Seattle+WA&destination=" + value.address;
                         let box = index;
                         let t = index + 'x';
                         let r = index + 'y';
