@@ -18,10 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const db = mysql.createPool({
-  host: "vrk7xcrab1wsx4r1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  user: "kfxrdtx1rv27ldd5",
-  password: "m7xsrdbcpylcmygd",
-  database: "hwm4rhnfhqiuliah",
+  host: "z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  user: "svnuht230r4sv56n",
+  password: "q87ogtogjg2if3fd",
+  database: "i0vx0zpjcbomiovg",
 });
 
 
