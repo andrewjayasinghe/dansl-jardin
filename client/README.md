@@ -1,5 +1,5 @@
-## BCIT ISSP September 2020 project in collaboration with TedxAbbotsford
-Team members: Yang Liu, June Ka, Harish Anantharajah, Andrew Jayashighe, Karanveer Harika, Anthony Raymundo
+## TedxAbbotsford
+Team members: Harish Anantharajah, Andrew Jayashighe, Karanveer Harika, Yang Liu, June Ka, Anthony Raymundo
 
 ## Available Scripts
 
