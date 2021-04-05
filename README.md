@@ -1,6 +1,6 @@
 # DANS L'JARDIN PROJECT
 
-Hosted on heroku:
+The app is hosted on heroku:
 https://dansljardin.herokuapp.com/
 
 
